@@ -17,7 +17,7 @@
         <converters:InverseBooleanConverter x:Key="InverseBooleanConverter"></converters:InverseBooleanConverter>
         <CollectionViewSource x:Key="VersionsSource" Source="{Binding Path=Versions}" Filter="CollectionViewSource_Filter"></CollectionViewSource>
         <Style TargetType="{x:Type CheckBox}" x:Key="Checkbox" BasedOn="{StaticResource {x:Type CheckBox}}">
-            <Setter Property="Foreground" Value="#FFCCCCCC"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryText.Foreground}" />
             <Setter Property="FontFamily" Value="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -26,13 +26,13 @@
             <Setter Property="IsEnabled" Value="{Binding Source={x:Static viewModels:MainDataModel.Default}, Path=ProgressBarState.AllowEditing, Mode=OneWay}"/>
         </Style>
     </Page.Resources>
-    <Grid Margin="0" Background="#FF303030" Style="{DynamicResource DisabledStyle}" IsEnabled="{Binding Source={x:Static viewModels:MainDataModel.Default}, Path=ProgressBarState.AllowEditing, Mode=OneWay}">
+    <Grid Margin="0" Background="{DynamicResource Background.Secondary}" Style="{DynamicResource DisabledStyle}" IsEnabled="{Binding Source={x:Static viewModels:MainDataModel.Default}, Path=ProgressBarState.AllowEditing, Mode=OneWay}">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Seperator.Background}">
-            <Grid Background="#FF303030" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid Background="{DynamicResource Background.Secondary}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>

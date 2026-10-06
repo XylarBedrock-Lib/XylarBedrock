@@ -16,22 +16,22 @@
         <StackPanel Margin="30,28,30,0">
             <TextBlock HorizontalAlignment="Left"
                        Text="Set up your profile"
-                       Foreground="White"
+                       Foreground="{DynamicResource PrimaryText.Foreground}"
                        FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten"
-                       FontSize="28"/>
+                       FontSize="28" />
             <TextBlock Margin="0,12,0,0"
                        HorizontalAlignment="Left"
-                       Foreground="#FFE0E0E0"
+                       Foreground="{DynamicResource PrimaryText.Foreground}"
                        FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"
                        FontSize="14"
                        TextWrapping="Wrap"
-                       Text="Choose the name and profile picture you want to use inside XylarBedrock. If you already had a profile, you can update it here before finishing the setup."/>
+                       Text="Choose the name and profile picture you want to use inside XylarBedrock. If you already had a profile, you can update it here before finishing the setup." />
         </StackPanel>
 
         <Border Grid.Row="1"
                 Margin="30,24,30,22"
-                Background="#FF1F1F1F"
-                BorderBrush="#FF101010"
+                Background="{DynamicResource Background.Secondary}"
+                BorderBrush="{DynamicResource Seperator.Background}"
                 BorderThickness="2"
                 Padding="14,8,14,8">
             <Grid x:Name="ProfileControlHost"/>

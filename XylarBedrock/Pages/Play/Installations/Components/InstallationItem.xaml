@@ -47,21 +47,21 @@
             <Button x:Name="Folder" Click="Folder_Click" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" FontWeight="Bold" Style="{DynamicResource DialogButton}">
                 <Button.Content>
                     <Grid Width="16" Height="16">
-                        <Path Stretch="Uniform" Fill="White" StrokeThickness="0" Data="{DynamicResource FolderIcon}"/>
+                        <Path Stretch="Uniform" Fill="{DynamicResource PrimaryText.Foreground}" StrokeThickness="0" Data="{DynamicResource FolderIcon}" />
                     </Grid>
                 </Button.Content>
             </Button>
             <Button x:Name="MoveUp" Click="MoveUp_Click" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" FontWeight="Bold" Style="{DynamicResource DialogButton}" Visibility="Collapsed">
                 <Button.Content>
                     <Grid Width="16" Height="16">
-                        <Path Stretch="Uniform" Fill="White" StrokeThickness="0" Data="{DynamicResource UpArrowIcon}"/>
+                        <Path Stretch="Uniform" Fill="{DynamicResource PrimaryText.Foreground}" StrokeThickness="0" Data="{DynamicResource UpArrowIcon}" />
                     </Grid>
                 </Button.Content>
             </Button>
             <Button x:Name="MoveDown" Click="MoveDown_Click" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" FontWeight="Bold" Style="{DynamicResource DialogButton}" Visibility="Collapsed">
                 <Button.Content>
                     <Grid Width="16" Height="16">
-                        <Path Stretch="Uniform" Fill="White" StrokeThickness="0" Data="{DynamicResource DownArrowIcon}"/>
+                        <Path Stretch="Uniform" Fill="{DynamicResource PrimaryText.Foreground}" StrokeThickness="0" Data="{DynamicResource DownArrowIcon}" />
                     </Grid>
                 </Button.Content>
             </Button>

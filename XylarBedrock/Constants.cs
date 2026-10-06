@@ -29,6 +29,7 @@ namespace XylarBedrock
         public static readonly string LATEST_PREVIEW_UUID = "latest_preview";
 
         public static readonly string UPDATES_RELEASE_PAGE = "https://github.com/xylarcompany/XylarBedrock/releases/latest";
+        public static readonly string UPDATES_BETA_PAGE = "https://github.com/xylarcompany/XylarBedrock/releases";
         public static readonly string MINECRAFT_STORE_URI = "ms-windows-store://pdp/?PFN=Microsoft.MinecraftUWP_8wekyb3d8bbwe";
         public static readonly string MINECRAFT_STORE_WEB_URL = "https://www.xbox.com/games/store/minecraft-for-windows/9nblggh2jhxj";
         

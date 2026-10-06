@@ -21,7 +21,7 @@
     </ToggleButton>
     <Image Style="{StaticResource SideBarButtonIcon}" Source="/XylarBedrock;component/resources/images/icons/bedrock_snow_icon.png"/>
     <Grid x:Name="Progressbar">
-        <ProgressBar beh:ProgressBarSmoother.SmoothValue="{Binding ProgressBarState.CurrentProgress}" IsIndeterminate="{Binding ProgressBarState.IsIndeterminate}" Maximum="{Binding ProgressBarState.TotalProgress}" x:Name="progressSizeHack" Visibility="{Binding ProgressBarState.Anim_MiniVisibility}" Height="5" VerticalAlignment="Bottom" Foreground="#FF008542" Background="Black" BorderBrush="Black" Minimum="0"/>
+        <ProgressBar beh:ProgressBarSmoother.SmoothValue="{Binding ProgressBarState.CurrentProgress}" IsIndeterminate="{Binding ProgressBarState.IsIndeterminate}" Maximum="{Binding ProgressBarState.TotalProgress}" x:Name="progressSizeHack" Visibility="{Binding ProgressBarState.Anim_MiniVisibility}" Height="5" VerticalAlignment="Bottom" Foreground="#FF008542" Background="{DynamicResource Background.Secondary}" BorderBrush="{DynamicResource Seperator.Background}" Minimum="0" />
     </Grid>
 </controls:Toolbar_ButtonBase>
 

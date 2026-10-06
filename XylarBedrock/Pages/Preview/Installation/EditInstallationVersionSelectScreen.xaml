@@ -18,7 +18,7 @@
         <converters:InverseBooleanConverter x:Key="InverseBooleanConverter"></converters:InverseBooleanConverter>
         <CollectionViewSource x:Key="Versions" Source="{Binding Versions, Source={x:Static viewModels:MainDataModel.Default}}" Filter="CollectionViewSource_Filter"/>
         <Style TargetType="{x:Type CheckBox}" x:Key="Checkbox" BasedOn="{StaticResource {x:Type CheckBox}}">
-            <Setter Property="Foreground" Value="#FFCCCCCC"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryText.Foreground}" />
             <Setter Property="FontFamily" Value="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -28,7 +28,7 @@
             <Setter Property="IsEnabled" Value="{Binding Source={x:Static viewModels:MainDataModel.Default}, Path=ProgressBarState.AllowEditing, Mode=OneWay}"/>
         </Style>
     </Page.Resources>
-    <Grid Margin="0" Background="#FF303030" Style="{DynamicResource DisabledStyle}" IsEnabled="{Binding Source={x:Static viewModels:MainDataModel.Default}, Path=ProgressBarState.AllowEditing, Mode=OneWay}">
+    <Grid Margin="0" Background="{DynamicResource Background.Secondary}" Style="{DynamicResource DisabledStyle}" IsEnabled="{Binding Source={x:Static viewModels:MainDataModel.Default}, Path=ProgressBarState.AllowEditing, Mode=OneWay}">
         <Grid.RowDefinitions>
             <RowDefinition Height="75"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -39,7 +39,7 @@
         </Grid.RowDefinitions>
         <Grid Margin="15,0" VerticalAlignment="Center">
             <StackPanel>
-                <TextBlock Foreground="White" Text="{DynamicResource GeneralSubtitles_Search}" Margin="0,0,0,4" FontWeight="Bold" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" VerticalAlignment="Top" Background="{x:Null}"/>
+                <TextBlock Foreground="{DynamicResource PrimaryText.Foreground}" Text="{DynamicResource GeneralSubtitles_Search}" Margin="0,0,0,4" FontWeight="Bold" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" VerticalAlignment="Top" Background="{x:Null}" />
                 <ContentControl Style="{DynamicResource TextboxLikeFrame}" Height="30">
                     <Grid>
                         <Grid.ColumnDefinitions>

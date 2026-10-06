@@ -22,7 +22,7 @@
                               Filter="CollectionViewSource_Filter"/>
     </Page.Resources>
 
-    <Grid Margin="0" Background="#FF303030" Style="{DynamicResource DisabledStyle}">
+    <Grid Margin="0" Background="{DynamicResource Background.Secondary}" Style="{DynamicResource DisabledStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -31,15 +31,15 @@
         <Border Margin="18,18,18,12"
                 Padding="18"
                 CornerRadius="16"
-                Background="#1E252B"
+                Background="{DynamicResource Background.Secondary}"
                 BorderBrush="#33414D"
                 BorderThickness="1">
             <StackPanel>
                 <TextBlock Text="Minecraft for Windows"
-                           Foreground="White"
+                           Foreground="{DynamicResource PrimaryText.Foreground}"
                            FontSize="24"
                            FontWeight="Bold"
-                           FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
+                           FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" />
                 <TextBlock Margin="0,8,0,0"
                            Foreground="#B7C8D6"
                            FontSize="13"

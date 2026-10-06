@@ -8,26 +8,27 @@
       xmlns:local="clr-namespace:XylarBedrock.Pages.Welcome"
       mc:Ignorable="d" 
       d:DesignHeight="639" d:DesignWidth="1016"
-      Title="WelcomePage" Foreground="White" Initialized="Page_Initialized"
-      Background="#FF121212">
+      Title="WelcomePage" Foreground="{DynamicResource PrimaryText.Foreground}" Initialized="Page_Initialized"
+      Background="{DynamicResource Background.Primary}">
     <Grid Margin="0">
         <Grid>
             <Image Source="/XylarBedrock;component/resources/images/bg/firstlaunchbackground.jpg"
                    Stretch="UniformToFill"
+                   CacheMode="BitmapCache"
                    RenderOptions.BitmapScalingMode="Fant">
                 <Image.Effect>
-                    <BlurEffect Radius="5"/>
+                    <BlurEffect Radius="5" RenderingBias="Performance"/>
                 </Image.Effect>
             </Image>
-            <Border Background="#C8101010"/>
+            <Border Background="#55202020"/>
         </Grid>
 
         <Border Width="980"
                 Height="612"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                Background="#FF232323"
-                BorderBrush="#FF0D0D0D"
+                Background="{DynamicResource Background.Secondary}"
+                BorderBrush="{DynamicResource Seperator.Background}"
                 BorderThickness="2">
             <Grid SnapsToDevicePixels="True">
                 <Grid.RowDefinitions>
@@ -37,8 +38,8 @@
                 </Grid.RowDefinitions>
 
                 <Border Grid.Row="0"
-                        Background="#FF303030"
-                        BorderBrush="#FF101010"
+                        Background="{DynamicResource Background.Secondary}"
+                        BorderBrush="{DynamicResource Seperator.Background}"
                         BorderThickness="0,0,0,2">
                     <Grid>
                         <Border Background="#1AFFFFFF"/>
@@ -55,9 +56,9 @@
                                        Stretch="Uniform"/>
                                 <TextBlock Text="FIRST-TIME SETUP"
                                            Margin="3,8,0,0"
-                                           Foreground="#FFF0F0F0"
+                                           Foreground="{DynamicResource PrimaryText.Foreground}"
                                            FontSize="12"
-                                           FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten"/>
+                                           FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten" />
                             </StackPanel>
 
                             <StackPanel Grid.Column="1"
@@ -75,8 +76,8 @@
 
                 <Border Grid.Row="1"
                         Margin="18,18,18,10"
-                        Background="#FF2A2A2A"
-                        BorderBrush="#FF111111"
+                        Background="{DynamicResource Background.Secondary}"
+                        BorderBrush="{DynamicResource Seperator.Background}"
                         BorderThickness="2">
                     <Frame com:DisableNavigation.Disable="True"
                            x:Name="WelcomePageFrame"
@@ -86,14 +87,14 @@
                 </Border>
 
                 <TextBlock Grid.Row="2"
-                           Foreground="#FFE0E0E0"
+                           Foreground="{DynamicResource PrimaryText.Foreground}"
                            FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"
                            FontSize="11"
                            FontWeight="Bold"
                            Text="{DynamicResource MainWindow_Disclaimer}"
                            Margin="18,0,18,0"
                            HorizontalAlignment="Right"
-                           VerticalAlignment="Center"/>
+                           VerticalAlignment="Center" />
             </Grid>
         </Border>
     </Grid>

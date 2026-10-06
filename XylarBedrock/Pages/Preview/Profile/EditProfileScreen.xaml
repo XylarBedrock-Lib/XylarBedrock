@@ -14,8 +14,8 @@
         <Grid.Effect>
             <DropShadowEffect BlurRadius="6" Direction="0" ShadowDepth="0" Color="#F2000000"/>
         </Grid.Effect>
-        <Border CornerRadius="2" Background="#FF262626" Width="600" Height="258" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Border CornerRadius="2" Background="#FF262626" Width="600" Height="258" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Border CornerRadius="2" Background="{DynamicResource Background.Secondary}" Width="600" Height="258" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <Border CornerRadius="2" Background="{DynamicResource Background.Secondary}" Width="600" Height="258" VerticalAlignment="Center" HorizontalAlignment="Center">
         </Border>
         <Grid x:Name="ProfileControlContainer">
 

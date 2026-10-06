@@ -193,8 +193,8 @@
                 </Grid.RowDefinitions>
 
                 <Border Grid.Row="0"
-                        Background="#FF171717"
-                        BorderBrush="#26000000"
+                        Background="{DynamicResource Background.Secondary}"
+                        BorderBrush="{DynamicResource Seperator.Background}"
                         BorderThickness="0,0,0,1"
                         MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
                     <Grid>
@@ -216,9 +216,9 @@
                         <TextBlock Text="{x:Static local:App.DisplayName}"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
-                                   Foreground="#FFF0F0F0"
+                                   Foreground="{DynamicResource PrimaryText.Foreground}"
                                    FontSize="14"
-                                   FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten"/>
+                                   FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten" />
                     </Grid>
                 </Border>
 

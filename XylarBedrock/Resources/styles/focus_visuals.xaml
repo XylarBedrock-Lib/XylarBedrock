@@ -4,7 +4,6 @@
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Rectangle Margin="0" RadiusX="0" RadiusY="0" SnapsToDevicePixels="true" Stroke="{DynamicResource OveralElements.Background}" StrokeThickness="1"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -14,7 +13,6 @@
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Rectangle Margin="0" RadiusX="0" RadiusY="0" SnapsToDevicePixels="true" Fill="{DynamicResource FocusableElement.Background}" Stroke="{DynamicResource OveralElements.Background}" StrokeThickness="1"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

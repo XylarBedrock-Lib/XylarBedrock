@@ -183,6 +183,24 @@ namespace XylarBedrock.Handlers
 
         public static NLogTraceListener InternalTraceListener { get; set; } = new NLogTraceListener();
 
+        public static void EnsureLoggingConfiguration()
+        {
+            // Installed builds ship only the exe, so fall back to the embedded nlog.config.
+            if (File.Exists(Path.Combine(AppContext.BaseDirectory, "nlog.config"))) return;
+
+            try
+            {
+                using Stream stream = typeof(RuntimeHandler).Assembly.GetManifestResourceStream("XylarBedrock.nlog.config");
+                if (stream == null) return;
+                using StreamReader reader = new StreamReader(stream);
+                LogManager.Configuration = NLog.Config.XmlLoggingConfiguration.CreateFromXmlString(reader.ReadToEnd());
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Embedded logging configuration failed: {ex}");
+            }
+        }
+
         public static void StartLogging()
         {
             Trace.Listeners.Add(InternalTraceListener);

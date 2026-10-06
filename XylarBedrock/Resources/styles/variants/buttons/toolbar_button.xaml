@@ -3,34 +3,14 @@
                     xmlns:c="clr-namespace:XylarBedrock.UI.Components"
                     xmlns:i="http://schemas.microsoft.com/xaml/behaviors">
     
-    <SolidColorBrush x:Key="ToolbarButton.Static.Background" Color="Transparent"/>
-    <SolidColorBrush x:Key="ToolbarButton.Static.Border" Color="#FF006431"/>
-    <SolidColorBrush x:Key="ToolbarButton.Static.Foreground" Color="#FFCCCCCC"/>
-    <SolidColorBrush x:Key="ToolbarButton.MouseOver.Foreground" Color="White"/>
-    <SolidColorBrush x:Key="ToolbarButton.Selected.Foreground" Color="White"/>
-    <SolidColorBrush x:Key="ToolbarButton.Disabled.Background" Color="Transparent"/>
-    <SolidColorBrush x:Key="ToolbarButton.Disabled.Border" Color="#FFADB2B5"/>
-    <SolidColorBrush x:Key="ToolbarButton.Disabled.Foreground" Color="#FF838383"/>
-    <SolidColorBrush x:Key="ToolbarButton.Focused.Border" Color="White"/>
 
 
 
     <Style x:Key="ToolbarButton" TargetType="{x:Type ToggleButton}" xmlns:sys="clr-namespace:System;assembly=mscorlib">
-        <Setter Property="FocusVisualStyle">
-            <Setter.Value>
-                <Style>
-                    <Setter Property="Control.Template">
-                        <Setter.Value>
-                            <ControlTemplate>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="Background" Value="{StaticResource ToolbarButton.Static.Background}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource ToolbarButton.Static.Border}"/>
-        <Setter Property="Foreground" Value="{StaticResource ToolbarButton.Static.Foreground}"/>
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource BlankFocusVisual}"/>
+        <Setter Property="Background" Value="{DynamicResource ToolbarButton.Static.Background}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ToolbarButton.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ToolbarButton.Static.Foreground}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -56,27 +36,14 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource ToolbarButton.MouseOver.Foreground}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource ToolbarButton.MouseOver.Foreground}"/>
                             <Setter Property="Cursor" Value="Hand"/>
-                        </Trigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="IsKeyboardFocused" Value="True"/>
-                                <Condition Property="IsFocused" Value="True"/>
-                            </MultiTrigger.Conditions>
-                            <MultiTrigger.Setters>
-                                <Setter Property="BorderBrush" Value="{DynamicResource ToolbarButton.Focused.Border}"/>
-                            </MultiTrigger.Setters>
-                        </MultiTrigger>
-                        <Trigger Property="IsFocused" Value="true">
-                            <Setter Property="TextElement.FontWeight" TargetName="contentPresenter" Value="Bold"/>
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource ToolbarButton.Selected.Foreground}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Setter Property="TextElement.FontWeight" TargetName="contentPresenter" Value="Bold"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource ToolbarButton.Selected.Foreground}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource ToolbarButton.Selected.Foreground}"/>
                             <Setter Property="TextElement.FontWeight" TargetName="contentPresenter" Value="Bold"/>
                             <Trigger.EnterActions>
                                 <BeginStoryboard>
@@ -94,8 +61,8 @@
                             </Trigger.ExitActions>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource ToolbarButton.Disabled.Background}"/>
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource ToolbarButton.Disabled.Foreground}"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource ToolbarButton.Disabled.Background}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource ToolbarButton.Disabled.Foreground}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

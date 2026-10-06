@@ -17,43 +17,43 @@
       Background="{DynamicResource Background.Tertiary}">
     <Page.Resources>
         <Style x:Key="SectionBorder" TargetType="{x:Type Border}">
-            <Setter Property="Background" Value="#FF262626"/>
-            <Setter Property="BorderBrush" Value="#FF3F3F3F"/>
+            <Setter Property="Background" Value="{DynamicResource Background.Secondary}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Seperator.Background}" />
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Margin" Value="0,0,0,16"/>
             <Setter Property="Padding" Value="18"/>
         </Style>
 
         <Style x:Key="SectionTitle" TargetType="{x:Type TextBlock}">
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryText.Foreground}" />
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="FontFamily" Value="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
         </Style>
 
         <Style x:Key="SectionText" TargetType="{x:Type TextBlock}">
-            <Setter Property="Foreground" Value="#FFD0D0D0"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryText.Foreground}" />
             <Setter Property="FontSize" Value="13"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
             <Setter Property="FontFamily" Value="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
         </Style>
 
         <Style x:Key="RowTitle" TargetType="{x:Type TextBlock}">
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryText.Foreground}" />
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="FontFamily" Value="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
         </Style>
 
         <Style x:Key="RowText" TargetType="{x:Type TextBlock}">
-            <Setter Property="Foreground" Value="#FFB9B9B9"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryText.Foreground}" />
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
             <Setter Property="FontFamily" Value="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
         </Style>
 
         <Style x:Key="SettingsCheckBox" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource {x:Type CheckBox}}">
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryText.Foreground}" />
             <Setter Property="FontSize" Value="13"/>
             <Setter Property="FontFamily" Value="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -66,7 +66,7 @@
             <StackPanel Margin="16,16,16,22"
                         MaxWidth="1120"
                         HorizontalAlignment="Center">
-                <Border BorderBrush="#FF484848"
+                <Border BorderBrush="{DynamicResource Seperator.Background}"
                         BorderThickness="1"
                         Margin="0,0,0,16">
                     <Grid Height="168">
@@ -77,7 +77,7 @@
                                         ImageSource="/XylarBedrock;component/resources/images/bg/stone_texture.png"/>
                         </Grid.Background>
 
-                        <Border Background="#C6141414"/>
+                        <Border Background="{DynamicResource Background.Secondary}" />
 
                         <Grid Margin="20">
                             <Grid.ColumnDefinitions>
@@ -87,10 +87,10 @@
 
                             <StackPanel VerticalAlignment="Center">
                                 <TextBlock Text="{DynamicResource GeneralSettingsPage_HeroTitle}"
-                                           Foreground="White"
+                                           Foreground="{DynamicResource PrimaryText.Foreground}"
                                            FontSize="30"
                                            FontWeight="Bold"
-                                           FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten"/>
+                                           FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten" />
                                 <TextBlock Margin="0,10,0,0"
                                            Text="{DynamicResource GeneralSettingsPage_HeroSubtitle}"
                                            Style="{StaticResource SectionText}"/>
@@ -142,7 +142,7 @@
                                                   Padding="10,4,5,3"/>
                         </Grid>
 
-                        <Border Height="1" Margin="0,16,0,16" Background="#FF3E3E3E"/>
+                        <Border Height="1" Margin="0,16,0,16" Background="{DynamicResource Seperator.Background}"/>
 
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -165,7 +165,7 @@
                                                Padding="10,4,5,3"/>
                         </Grid>
 
-                        <Border Height="1" Margin="0,16,0,16" Background="#FF3E3E3E"/>
+                        <Border Height="1" Margin="0,16,0,16" Background="{DynamicResource Seperator.Background}"/>
 
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -174,12 +174,28 @@
                             </Grid.ColumnDefinitions>
 
                             <StackPanel Margin="0,0,16,0">
-                                <TextBlock Text="{DynamicResource GeneralSettingsScreen_KeepLauncherOpen}"
+                                <TextBlock Text="Dark Mode"
                                            Style="{StaticResource RowTitle}"/>
                                 <TextBlock Margin="0,4,0,0"
-                                           Text="{DynamicResource GeneralSettingsPage_KeepOpenText}"
+                                           Text="Switches the launcher between the gray and dark themes."
                                            Style="{StaticResource RowText}"/>
                             </StackPanel>
+
+                            <CheckBox x:Name="darkModeCheckBox"
+                                      Grid.Column="1"
+                                      Style="{StaticResource SettingsCheckBox}"
+                                      Content=""
+                                      Click="DarkModeCheckBox_Click"
+                                      IsChecked="{Binding Source={x:Static properties:LauncherSettings.Default}, Path=DarkMode}"/>
+                        </Grid>
+
+                        <Border Height="1" Margin="0,16,0,16" Background="{DynamicResource Seperator.Background}"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
 
                             <CheckBox x:Name="keepLauncherOpenCheckBox"
                                       Grid.Column="1"
@@ -190,7 +206,7 @@
                                       IsEnabled="{Binding Source={x:Static viewModels:MainDataModel.Default}, Path=ProgressBarState.AllowEditing, Mode=OneWay}"/>
                         </Grid>
 
-                        <Border Height="1" Margin="0,16,0,16" Background="#FF3E3E3E"/>
+                        <Border Height="1" Margin="0,16,0,16" Background="{DynamicResource Seperator.Background}"/>
 
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -244,7 +260,7 @@
                                       Click="useFixedInstallLocation_Click"/>
                         </Grid>
 
-                        <Border Height="1" Margin="0,16,0,16" Background="#FF3E3E3E"/>
+                        <Border Height="1" Margin="0,16,0,16" Background="{DynamicResource Seperator.Background}"/>
 
                         <TextBlock Text="{DynamicResource GeneralSettingsScreen_PathOptions_PathSubtitle_Text}"
                                    Style="{StaticResource RowTitle}"/>
@@ -280,8 +296,8 @@
 
                                 <Grid Grid.Column="2"
                                       Width="1"
-                                      Background="Gray"
-                                      Margin="2,5"/>
+                                      Background="{DynamicResource Background.Secondary}"
+                                      Margin="2,5" />
 
                                 <Button Grid.Column="3"
                                         x:Name="ResetDirectoryButton"

@@ -24,7 +24,43 @@ namespace XylarBedrock.UpdateProcessor.Authentication
         private static void Init()
         {
             string dllImport = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, RuntimesDirName, GetEnv(), DLLName);
+            if (!File.Exists(dllImport)) dllImport = ExtractEmbeddedBroker() ?? dllImport;
             InteropExtensions.LoadLibrary(dllImport);
+        }
+
+        // Single-file installs carry the broker only as an embedded resource: unpack it into the launcher's data folder.
+        private static string ExtractEmbeddedBroker()
+        {
+            Assembly assembly = typeof(AuthenticationTokenHelper).Assembly;
+            string env = GetEnv();
+            string resourceName = assembly.GetManifestResourceNames().FirstOrDefault(name =>
+                name.EndsWith(DLLName, StringComparison.OrdinalIgnoreCase) &&
+                (name.Contains(env) || name.Contains(env.Replace('-', '_'))));
+            if (resourceName == null) return null;
+
+            string exeDirectory = Path.GetDirectoryName(Environment.ProcessPath) ?? AppContext.BaseDirectory;
+            string targetPath = Path.Combine(exeDirectory, "data", "native", env, DLLName);
+
+            try
+            {
+                using Stream stream = assembly.GetManifestResourceStream(resourceName);
+                if (stream == null) return null;
+                if (File.Exists(targetPath) && new FileInfo(targetPath).Length == stream.Length) return targetPath;
+
+                Directory.CreateDirectory(Path.GetDirectoryName(targetPath));
+                using FileStream file = File.Create(targetPath);
+                stream.CopyTo(file);
+                return targetPath;
+            }
+            catch (IOException)
+            {
+                // Another launcher instance may already have it loaded.
+                return File.Exists(targetPath) ? targetPath : null;
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return null;
+            }
         }
 
 

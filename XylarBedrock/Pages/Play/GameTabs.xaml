@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:XylarBedrock.Pages.Play"
       xmlns:com="clr-namespace:JemExtensions.WPF.Behaviours;assembly=JemExtensions"
       mc:Ignorable="d"
-      Title="{DynamicResource GameTab_Title}" Foreground="{x:Null}" Background="#FF303030" Loaded="Page_Loaded">
+      Title="{DynamicResource GameTab_Title}" Foreground="{x:Null}" Background="{DynamicResource Background.Primary}" Loaded="Page_Loaded">
     <Grid Margin="0,0,0,0" Background="{DynamicResource Background.Primary}"  ClipToBounds="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -24,19 +24,9 @@
                             <ToolTip Content="{DynamicResource GameTab_PlayButton_Text}"/>
                         </ToggleButton.ToolTip>
                     </ToggleButton>
-                    <ToggleButton x:Name="InstallationsButton" Width="Auto" Click="ButtonManager2" Content="{DynamicResource ResourceKey=GameTab_InstallationsButton_Text}"  Style="{DynamicResource ToolbarButton}">
-                        <ToggleButton.ToolTip>
-                            <ToolTip Content="{DynamicResource GameTab_InstallationsButton_Text}"/>
-                        </ToggleButton.ToolTip>
-                    </ToggleButton>
                     <ToggleButton x:Name="FaqButton" Width="Auto" Click="ButtonManager2" Content="{DynamicResource ResourceKey=GameTab_FAQButton_Text}" Style="{DynamicResource ToolbarButton}">
                         <ToggleButton.ToolTip>
                             <ToolTip Content="{DynamicResource GameTab_FAQButton_Text}"/>
-                        </ToggleButton.ToolTip>
-                    </ToggleButton>
-                    <ToggleButton x:Name="PatchNotesButton" Width="Auto" Click="ButtonManager2" Content="{DynamicResource ResourceKey=GameTab_PatchNotesButton_Text}" Style="{DynamicResource ToolbarButton}">
-                        <ToggleButton.ToolTip>
-                            <ToolTip Content="{DynamicResource GameTab_PatchNotesButton_Text}"/>
                         </ToggleButton.ToolTip>
                     </ToggleButton>
                 </StackPanel>

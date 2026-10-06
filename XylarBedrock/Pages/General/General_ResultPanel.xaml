@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:XylarBedrock"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Background="#FF323232" Loaded="Grid_Loaded">
+      Background="{DynamicResource Background.Primary}" Loaded="Grid_Loaded">
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
         <TextBlock Foreground="{DynamicResource PrimaryText.Foreground}" 
                    Name="Text1"

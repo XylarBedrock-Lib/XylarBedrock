@@ -17,7 +17,7 @@
 		<UpdateRequired>false</UpdateRequired>
 		<MapFileExtensions>true</MapFileExtensions>
 		<ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>0.0.0.4</ApplicationVersion>
+    <ApplicationVersion>0.0.0.6</ApplicationVersion>
 		<UseApplicationTrust>false</UseApplicationTrust>
 		<BootstrapperEnabled>false</BootstrapperEnabled>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
@@ -30,14 +30,14 @@
 		<SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
 		<IsPublishable>True</IsPublishable>
 		<Company>Xylar Inc.</Company>
-    <Product>XylarBedrock v0.0.0.4</Product>
+    <Product>XylarBedrock v0.0.0.6</Product>
 		<PackageId>XylarBedrock</PackageId>
 		<Authors>Xylar Inc. and Mrmariix</Authors>
 		<Copyright>Copyright (c) Xylar Inc. and Mrmariix</Copyright>
-    <Version>0.0.0.4</Version>
-    <FileVersion>0.0.0.4</FileVersion>
-    <AssemblyVersion>0.0.0.4</AssemblyVersion>
-    <InformationalVersion>0.0.0.4</InformationalVersion>
+    <Version>0.0.0.6</Version>
+    <FileVersion>0.0.0.6</FileVersion>
+    <AssemblyVersion>0.0.0.6</AssemblyVersion>
+    <InformationalVersion>0.0.0.6</InformationalVersion>
 		<AnalysisLevel>latest</AnalysisLevel>
 		<SelfContained>false</SelfContained>
 	</PropertyGroup>
@@ -103,6 +103,8 @@
 		<None Update="nlog.config">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
+		<!-- Fallback for single-file installs that ship only the exe. -->
+		<EmbeddedResource Include="nlog.config" LogicalName="XylarBedrock.nlog.config" />
 	</ItemGroup>
 	<ItemGroup>
 		<BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -170,6 +172,7 @@
 		<Resource Include="Resources\images\bg\play_screen\1.21.111_the_copper_age.png" />
 		<Resource Include="Resources\images\bg\play_screen\1.21.130_mounts_of_mayhem.png" />
 		<Resource Include="Resources\images\bg\play_screen\26.10_tiny_takeover.png" />
+		<Resource Include="Resources\images\bg\play_screen\26.30_chaos_cubed.png" />
 		<Resource Include="Resources\images\bg\play_screen\1.21_tricky_trials.png" />
 		<Resource Include="Resources\images\bg\play_screen\bedrock_and_java_together.jpg">
 		  <CopyToOutputDirectory></CopyToOutputDirectory>
@@ -488,9 +491,6 @@
 		<Resource Include="Resources\images\bg\firstlaunchbackground.jpg" />
 	</ItemGroup>
 	<ItemGroup>
-		<Resource Include="Resources\images\bg\firstlaunchbackground_legacy.jpg" />
-	</ItemGroup>
-	<ItemGroup>
 		<Resource Include="Resources\images\bg\play_screen\1.0_pocket_edition.jpg" />
 	</ItemGroup>
 	<ItemGroup>
@@ -662,7 +662,6 @@
 		<Resource Include="Resources\fonts\Noto Sans\NotoSansTC-Thin.otf" />
 		<Resource Include="Resources\fonts\WINGDNG3.TTF" />
 		<Resource Include="Resources\fonts\X360.ttf" />
-		<Resource Include="Resources\images\bg\creatortools_screen\editor-header-image.png" />
 		<Resource Include="Resources\images\ui\decorations\EditorBannerDecoration.png" />
 		<Resource Include="Resources\images\ui\panels\MainPagePlayButton.png" />
 		<Resource Include="Resources\images\ui\panels\MainPagePlayButtonFocusOver.png" />

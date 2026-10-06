@@ -62,7 +62,7 @@
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0"
-                           Foreground="White"
+                           Foreground="{DynamicResource PrimaryText.Foreground}"
                            Text="{DynamicResource CreatorToolsPage_Editor}" 
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
@@ -71,7 +71,7 @@
                 </TextBlock>
                 <TextBlock Grid.Row="1"
                            Text="{DynamicResource CreatorToolsPage_Slogan}"
-                           Foreground="White" 
+                           Foreground="{DynamicResource PrimaryText.Foreground}" 
                            HorizontalAlignment="Center" 
                            VerticalAlignment="Top"
                            FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Seven"
@@ -81,7 +81,7 @@
                 </TextBlock>
             </Grid>
         </Grid>
-        <Grid x:Name="PlayScreenBorder" Grid.Row="1" x:FieldModifier="public" VerticalAlignment="Bottom" Background="#FF262626">
+        <Grid x:Name="PlayScreenBorder" Grid.Row="1" x:FieldModifier="public" VerticalAlignment="Bottom" Background="{DynamicResource Background.Secondary}">
             <TextBlock Style="{DynamicResource HeaderTextblock}" Text="{DynamicResource MainWindow_Disclaimer}" HorizontalAlignment="Right" Panel.ZIndex="0" VerticalAlignment="Center" Padding="0,0,5,0" Margin="0,0,0,0"/>
             <Button IsEnabled="{Binding Source={x:Static viewModels:MainDataModel.Default},Path=ProgressBarState.AllowPlaying, Mode=OneWay}" x:Name="EditorPlayButton" Click="MainPlayButton_Click" HorizontalAlignment="Center" Margin="286,-8,286,0" VerticalAlignment="Top" Width="250" Height="56" Padding="0" Style="{DynamicResource BigGreenButton}">
                 <TextBlock x:Name="PlayButtonText" Style="{DynamicResource BigGreenButtonEditor_Text}" Text="{Binding Source={x:Static viewModels:MainDataModel.Default}, Path=ProgressBarState.PlayEditorButtonString, Mode=OneWay}"/>

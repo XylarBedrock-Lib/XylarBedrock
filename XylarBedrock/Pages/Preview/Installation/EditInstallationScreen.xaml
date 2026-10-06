@@ -31,7 +31,7 @@
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Button VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Column="2"  Style="{StaticResource ClosePopupButton}" Name="CloseButton" Click="CloseButton_Click" Margin="0,0,10,0"></Button>
-            <TextBlock Focusable="False" Grid.ColumnSpan="3"  Text="{DynamicResource EditInstallationScreen_Title}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="20" x:Name="Header"></TextBlock>
+            <TextBlock Focusable="False" Grid.ColumnSpan="3"  Text="{DynamicResource EditInstallationScreen_Title}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{DynamicResource PrimaryText.Foreground}" FontWeight="Bold" FontSize="20" x:Name="Header"></TextBlock>
         </Grid>
         <Separator Grid.Row="1"></Separator>
         <Grid Grid.Row="2">
@@ -48,7 +48,7 @@
                                     <ColumnDefinition></ColumnDefinition>
                                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <ComboBox Height="32" x:Name="InstallationVersionSelect" ItemsSource="{Binding Source={StaticResource Versions}, IsAsync=True}" SelectedValue="{Binding SelectedVersionUUID, Mode=TwoWay}" SelectedValuePath="UUID" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Style="{DynamicResource GenericComboBoxStyle}" Foreground="White" Padding="13,0,0,0" SelectedIndex="1" FontSize="14">
+                                <ComboBox Height="32" x:Name="InstallationVersionSelect" ItemsSource="{Binding Source={StaticResource Versions}, IsAsync=True}" SelectedValue="{Binding SelectedVersionUUID, Mode=TwoWay}" SelectedValuePath="UUID" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Style="{DynamicResource GenericComboBoxStyle}" Foreground="{DynamicResource PrimaryText.Foreground}" Padding="13,0,0,0" SelectedIndex="1" FontSize="14">
                                     <ComboBox.ItemTemplate>
                                         <DataTemplate DataType="{x:Type classes:MCVersion}">
                                             <TextBlock Style="{DynamicResource CommonTextblock}" Text="{Binding DisplayName}"></TextBlock>

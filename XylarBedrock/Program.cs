@@ -41,6 +41,7 @@ namespace XylarBedrock
             Directory.SetCurrentDirectory(AppContext.BaseDirectory);
             RuntimeHandler.ConfigureRenderingCompatibility();
 
+            RuntimeHandler.EnsureLoggingConfiguration();
             RuntimeHandler.StartLogging();
             RuntimeHandler.LogStartupInformation();
             RuntimeHandler.ValidateOSArchitecture();

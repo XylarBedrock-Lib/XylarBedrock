@@ -80,7 +80,6 @@
 
     <Style TargetType="{x:Type TextBox}" x:Key="BlankTextBox" BasedOn="{StaticResource TextBox.BaseStyle}">
         <Style.Resources>
-            <SolidColorBrush x:Key="TextBox.Static.Foreground" Color="White"/>
             <SolidColorBrush x:Key="TextBox.Static.Background" Color="Transparent"/>
             <SolidColorBrush x:Key="TextBox.Static.Border" Color="Transparent"/>
 

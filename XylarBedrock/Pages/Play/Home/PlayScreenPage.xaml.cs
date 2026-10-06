@@ -75,31 +75,31 @@ namespace XylarBedrock.Pages.Play.Home
             {
                 MainPlayButton.IsEnabled = true;
                 ApplyButtonDetails(null);
-                ApplyPlayButtonStyle(MainDataModel.Default.ProgressBarState.PlayButtonString, Brushes.White, 26);
+                ApplyPlayButtonStyle(MainDataModel.Default.ProgressBarState.PlayButtonString, 26);
             }
             else if (!isOfficialStoreInstalled)
             {
                 MainPlayButton.IsEnabled = MainDataModel.Default.ProgressBarState.AllowPlaying;
                 ApplyButtonDetails("Minecraft for Windows was not found. Install the original Microsoft Store release first.");
-                ApplyStoreButtonStyle("Download Minecraft First.", Brushes.LightGray, 18);
+                ApplyStoreButtonStyle("Download Minecraft First.", 18);
             }
             else if (!bundledDllPack.IsReady)
             {
                 MainPlayButton.IsEnabled = false;
                 ApplyButtonDetails(bundledDllPack.DetailsText);
-                ApplyStoreButtonStyle(GetBundledDllButtonText(bundledDllPack), Brushes.LightGray, 18);
+                ApplyStoreButtonStyle(GetBundledDllButtonText(bundledDllPack), 18);
             }
             else if (!MainDataModel.Default.PackageManager.IsBundledModInstalled())
             {
                 MainPlayButton.IsEnabled = MainDataModel.Default.ProgressBarState.AllowPlaying;
                 ApplyButtonDetails("The bundled mod pack is ready. Click GET MODS to copy it into your Minecraft profile.");
-                ApplyModsButtonStyle("GET MODS", Brushes.White, 22);
+                ApplyModsButtonStyle("GET MODS", 22);
             }
             else if (!isLauncherFullyLoaded)
             {
                 MainPlayButton.IsEnabled = MainDataModel.Default.ProgressBarState.AllowPlaying;
                 ApplyButtonDetails(null);
-                ApplyPlayButtonStyle("Play", Brushes.White, 26);
+                ApplyPlayButtonStyle("Play", 26);
                 isLauncherFullyLoaded = true;
             }
             else if (selectedInstallation is not null &&
@@ -108,52 +108,54 @@ namespace XylarBedrock.Pages.Play.Home
             {
                 MainPlayButton.IsEnabled = false;
                 ApplyButtonDetails("The selected installation is incomplete. Recreate it or switch back to the official Microsoft Store release.");
-                ApplyStoreButtonStyle("Download Minecraft First.", Brushes.LightGray, 18);
+                ApplyStoreButtonStyle("Download Minecraft First.", 18);
             }
             else if (selectedInstallation is not null && !IsSupportedStoreInstallation(selectedInstallation))
             {
                 MainPlayButton.IsEnabled = false;
                 ApplyButtonDetails("Play now supports only the official Minecraft for Windows release from Microsoft Store.");
-                ApplyStoreButtonStyle("Store Release Only", Brushes.LightGray, 18);
+                ApplyStoreButtonStyle("Store Release Only", 18);
             }
             else if (selectedInstallation is null)
             {
                 MainPlayButton.IsEnabled = false;
                 ApplyButtonDetails("No valid Minecraft installation is selected right now. Reopen the launcher once or pick the official Store release.");
-                ApplyStoreButtonStyle("Select Installation", Brushes.LightGray, 18);
+                ApplyStoreButtonStyle("Select Installation", 18);
             }
             else
             {
                 MainPlayButton.IsEnabled = MainDataModel.Default.ProgressBarState.AllowPlaying;
                 ApplyButtonDetails(null);
-                ApplyPlayButtonStyle("Play", Brushes.White, 26);
+                ApplyPlayButtonStyle("Play", 26);
             }
         }
 
-        private void ApplyPlayButtonStyle(string text, Brush foreground, double fontSize)
+        private void ApplyPlayButtonStyle(string text, double fontSize)
         {
             MainPlayButton.Style = (Style)FindResource("BigGreenButton");
             MainPlayButton.Width = 250;
-            PlayButtonText.Text = text;
-            PlayButtonText.Foreground = foreground;
-            PlayButtonText.FontSize = fontSize;
+            ApplyPlayButtonText(text, fontSize);
         }
 
-        private void ApplyStoreButtonStyle(string text, Brush foreground, double fontSize)
+        private void ApplyStoreButtonStyle(string text, double fontSize)
         {
             MainPlayButton.Style = (Style)FindResource("BigStoreButton");
             MainPlayButton.Width = 340;
-            PlayButtonText.Text = text;
-            PlayButtonText.Foreground = foreground;
-            PlayButtonText.FontSize = fontSize;
+            ApplyPlayButtonText(text, fontSize);
         }
 
-        private void ApplyModsButtonStyle(string text, Brush foreground, double fontSize)
+        private void ApplyModsButtonStyle(string text, double fontSize)
         {
             MainPlayButton.Style = (Style)FindResource("BigModsButton");
             MainPlayButton.Width = 250;
+            ApplyPlayButtonText(text, fontSize);
+        }
+
+        private void ApplyPlayButtonText(string text, double fontSize)
+        {
             PlayButtonText.Text = text;
-            PlayButtonText.Foreground = foreground;
+            // Follows the active theme: black in light mode, white in dark mode.
+            PlayButtonText.SetResourceReference(TextBlock.ForegroundProperty, "PrimaryText.Foreground");
             PlayButtonText.FontSize = fontSize;
         }
 

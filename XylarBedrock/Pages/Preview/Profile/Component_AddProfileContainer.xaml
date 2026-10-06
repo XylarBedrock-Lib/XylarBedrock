@@ -36,10 +36,10 @@
                             <Setter Property="BorderBrush" Value="Transparent"></Setter>
                             <Style.Triggers>
                                 <Trigger Property="IsKeyboardFocused" Value="True">
-                                    <Setter Property="BorderBrush" Value="White"></Setter>
+                                    <Setter Property="BorderBrush" Value="{DynamicResource Seperator.Background}"></Setter>
                                 </Trigger>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="BorderBrush" Value="White"></Setter>
+                                    <Setter Property="BorderBrush" Value="{DynamicResource Seperator.Background}"></Setter>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
@@ -49,12 +49,12 @@
                     <TextBlock x:Name="CreateProfileText" 
                                Text="{DynamicResource NewProfile_ProfileNameHeader}" 
                                HorizontalAlignment="Left" 
-                               VerticalAlignment="Center" Foreground="White" 
+                               VerticalAlignment="Center" Foreground="{DynamicResource PrimaryText.Foreground}" 
                                FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"
-                               Height="16" FontWeight="Bold" FontSize="11" Width="auto"/>
+                               Height="16" FontWeight="Bold" FontSize="11" Width="auto" />
                     <TextBox x:Name="ProfileNameTextbox" HorizontalAlignment="Left" 
                                VerticalAlignment="Center" 
-                         MaxLength="35" KeyDown="TextBox_KeyDown" Foreground="White" 
+                         MaxLength="35" KeyDown="TextBox_KeyDown" Foreground="{DynamicResource PrimaryText.Foreground}" 
                              TextChanged="ProfileNameTextbox_TextChanged"
                          FontSize="14" AcceptsReturn="False" 
                              Text="{Binding ProfileName}"
@@ -65,12 +65,12 @@
                 </StackPanel>
             </Grid>
             <Grid Margin="0" Background="{x:Null}">
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="{DynamicResource NewProfile_CreateProfileSubTitle}" Foreground="White" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" FontSize="24" x:Name="CreateProfileSubtitle" Margin="0,30,0,0" FontWeight="Bold"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Text="{DynamicResource NewProfile_CreateProfileSubTitle}" Foreground="{DynamicResource PrimaryText.Foreground}" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" FontSize="24" x:Name="CreateProfileSubtitle" Margin="0,30,0,0" FontWeight="Bold" />
                 <Button x:Name="CreateProfileButton" Click="CreateProfileButton_Click" HorizontalAlignment="Center" Margin="0,0,0,7" VerticalAlignment="Bottom" Width="250" Height="56" Padding="0"  Style="{DynamicResource BigGreenButton}">
                     <TextBlock x:Name="CreateProfileButtonText" Text="{DynamicResource NewProfile_CreateProfileButton}" Style="{DynamicResource BigGreenButton_Text}"/>
                 </Button>
                 <StackPanel Margin="0,185,8,8" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" ScrollViewer.VerticalScrollBarVisibility="Disabled">
-                    <Button x:Name="BackButton" Click="BackButton_Click"  SnapsToDevicePixels="True" Foreground="White" Content="{DynamicResource NewProfile_GoBackButton}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="20" Style="{DynamicResource DialogMiniButton}"/>
+                    <Button x:Name="BackButton" Click="BackButton_Click"  SnapsToDevicePixels="True" Foreground="{DynamicResource PrimaryText.Foreground}" Content="{DynamicResource NewProfile_GoBackButton}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="20" Style="{DynamicResource DialogMiniButton}" />
                 </StackPanel>
             </Grid>
         </Grid>

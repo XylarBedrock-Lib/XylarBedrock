@@ -368,3 +368,7 @@ MigrationBackup/
 solution_binaries/Publisher/
 /modules/XylarBedrock.TokenBroker/NDH6SA~M
 
+
+# MSI installer tooling and output (not part of the repo)
+installer/
+dotnet-tools.json

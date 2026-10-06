@@ -10,29 +10,29 @@
       Background="{DynamicResource Background.Tertiary}">
     <Page.Resources>
         <Style x:Key="FaqCardBorder" TargetType="{x:Type Border}">
-            <Setter Property="Background" Value="#FF262626"/>
-            <Setter Property="BorderBrush" Value="#FF3F3F3F"/>
+            <Setter Property="Background" Value="{DynamicResource Background.Secondary}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Seperator.Background}" />
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Padding" Value="20"/>
             <Setter Property="Margin" Value="0,0,14,14"/>
         </Style>
 
         <Style x:Key="FaqBadge" TargetType="{x:Type Border}">
-            <Setter Property="Background" Value="#FF151515"/>
-            <Setter Property="BorderBrush" Value="#FF4E4E4E"/>
+            <Setter Property="Background" Value="{DynamicResource Background.Secondary}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Seperator.Background}" />
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Padding" Value="8,4"/>
         </Style>
 
         <Style x:Key="FaqQuestionTitle" TargetType="{x:Type TextBlock}">
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryText.Foreground}" />
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontFamily" Value="/XylarBedrock;component/Resources/fonts/#Minecraft Ten"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
 
         <Style x:Key="FaqAnswerText" TargetType="{x:Type TextBlock}">
-            <Setter Property="Foreground" Value="#FFD0D0D0"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryText.Foreground}" />
             <Setter Property="FontSize" Value="13"/>
             <Setter Property="FontFamily" Value="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
@@ -44,7 +44,7 @@
             <StackPanel Margin="18,18,18,22"
                         MaxWidth="1080"
                         HorizontalAlignment="Center">
-                <Border BorderBrush="#FF484848"
+                <Border BorderBrush="{DynamicResource Seperator.Background}"
                         BorderThickness="1"
                         Margin="0,0,0,16">
                     <Grid Height="196">
@@ -54,19 +54,19 @@
                                         ViewportUnits="Absolute"
                                         ImageSource="/XylarBedrock;component/resources/images/bg/stone_texture.png"/>
                         </Grid.Background>
-                        <Border Background="#C6141414"/>
+                        <Border Background="{DynamicResource Background.Secondary}" />
                         <Grid Margin="22">
                             <StackPanel VerticalAlignment="Center">
                                 <TextBlock Text="{DynamicResource FaqPage_Title}"
-                                           Foreground="White"
+                                           Foreground="{DynamicResource PrimaryText.Foreground}"
                                            FontSize="32"
-                                           FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten"/>
+                                           FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten" />
                                 <TextBlock Margin="0,10,0,0"
                                            Text="{DynamicResource FaqPage_Subtitle}"
-                                           Foreground="#FFE0E0E0"
+                                           Foreground="{DynamicResource PrimaryText.Foreground}"
                                            FontSize="14"
                                            FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"
-                                           TextWrapping="Wrap"/>
+                                           TextWrapping="Wrap" />
                             </StackPanel>
                         </Grid>
                     </Grid>
@@ -88,9 +88,9 @@
                         <StackPanel>
                             <Border Style="{StaticResource FaqBadge}" HorizontalAlignment="Left">
                                 <TextBlock Text="01"
-                                           Foreground="#FFFFE17C"
+                                           Foreground="{DynamicResource PrimaryText.Foreground}"
                                            FontSize="12"
-                                           FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
+                                           FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" />
                             </Border>
                             <TextBlock Margin="0,14,0,0"
                                        Text="{DynamicResource FaqPage_Q1_Title}"
@@ -108,9 +108,9 @@
                         <StackPanel>
                             <Border Style="{StaticResource FaqBadge}" HorizontalAlignment="Left">
                                 <TextBlock Text="02"
-                                           Foreground="#FFFFE17C"
+                                           Foreground="{DynamicResource PrimaryText.Foreground}"
                                            FontSize="12"
-                                           FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
+                                           FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" />
                             </Border>
                             <TextBlock Margin="0,14,0,0"
                                        Text="{DynamicResource FaqPage_Q2_Title}"
@@ -127,9 +127,9 @@
                         <StackPanel>
                             <Border Style="{StaticResource FaqBadge}" HorizontalAlignment="Left">
                                 <TextBlock Text="03"
-                                           Foreground="#FFFFE17C"
+                                           Foreground="{DynamicResource PrimaryText.Foreground}"
                                            FontSize="12"
-                                           FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
+                                           FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" />
                             </Border>
                             <TextBlock Margin="0,14,0,0"
                                        Text="{DynamicResource FaqPage_Q3_Title}"
@@ -147,9 +147,9 @@
                         <StackPanel>
                             <Border Style="{StaticResource FaqBadge}" HorizontalAlignment="Left">
                                 <TextBlock Text="04"
-                                           Foreground="#FFFFE17C"
+                                           Foreground="{DynamicResource PrimaryText.Foreground}"
                                            FontSize="12"
-                                           FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
+                                           FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" />
                             </Border>
                             <TextBlock Margin="0,14,0,0"
                                        Text="{DynamicResource FaqPage_Q4_Title}"

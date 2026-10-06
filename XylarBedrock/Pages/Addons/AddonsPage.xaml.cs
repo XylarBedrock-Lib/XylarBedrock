@@ -29,7 +29,6 @@ namespace XylarBedrock.Pages.Addons
         private const int FeaturedMosaicCount = 4;
         private const int PromoAddonsCount = 2;
         private const int ShelfOneAnimatedRemoteCount = 10;
-        private const int ShelfTwoVisibleCount = 8;
         private const double ShelfScrollPadding = 18;
         private static readonly TimeSpan ShelfAnimationDuration = TimeSpan.FromMilliseconds(260);
         private static readonly TimeSpan AddonsOverlayDuration = TimeSpan.FromSeconds(2.5);
@@ -892,7 +891,9 @@ namespace XylarBedrock.Pages.Addons
             }
 
             int rowTwoStart = bestSellerSkip + rowOneRemoteCount;
-            foreach (AddonEntry addon in remoteAddons.Skip(rowTwoStart).Take(ShelfTwoVisibleCount))
+            // Show every remaining addon here so that "Load more" keeps appending
+            // visible cards instead of being capped at a fixed amount.
+            foreach (AddonEntry addon in remoteAddons.Skip(rowTwoStart))
             {
                 ShelfTwoAddons.Add(addon);
             }

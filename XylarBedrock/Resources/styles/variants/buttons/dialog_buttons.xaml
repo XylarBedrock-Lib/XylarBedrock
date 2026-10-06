@@ -3,7 +3,7 @@
 
 
     <Style x:Key="DialogButton" TargetType="{x:Type Button}">
-        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource BlankFocusVisual}"/>
         <Setter Property="Background" Value="{DynamicResource DialogButton.Static.Background}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource DialogButton.Static.Border}"/>
         <Setter Property="Foreground" Value="{DynamicResource DialogButton.Static.Foreground}"/>
@@ -22,9 +22,6 @@
                         <ContentPresenter x:Name="contentPresenter" Focusable="False" Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                     </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsDefaulted" Value="true">
-                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource DialogButton.Pressed.Border}"/>
-                        </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter Property="Background" TargetName="border" Value="{DynamicResource DialogButton.MouseOver.Background}"/>
                             <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource DialogButton.MouseOver.Border}"/>
@@ -40,9 +37,6 @@
                             <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource DialogButton.Disabled.Border}"/>
                             <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource DialogButton.Disabled.Foreground}"/>
                             <Setter Property="Opacity" TargetName="contentPresenter" Value="0.5"></Setter>
-                        </Trigger>
-                        <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter Property="BorderBrush" TargetName="border" Value="White"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

@@ -21,16 +21,16 @@
         <StackPanel Margin="30,28,30,0">
             <TextBlock HorizontalAlignment="Left"
                        Text="{DynamicResource FirstLaunch_OneThingTitle}"
-                       Foreground="White"
+                       Foreground="{DynamicResource PrimaryText.Foreground}"
                        FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten"
-                       FontSize="28"/>
+                       FontSize="28" />
             <TextBlock Margin="0,12,0,0"
                        HorizontalAlignment="Left"
                        Text="{DynamicResource FirstLaunch_OneThingSubtitle}"
-                       Foreground="#FFE0E0E0"
+                       Foreground="{DynamicResource PrimaryText.Foreground}"
                        FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"
                        FontSize="14"
-                       TextWrapping="Wrap"/>
+                       TextWrapping="Wrap" />
         </StackPanel>
 
         <Grid Grid.Row="1"
@@ -41,47 +41,47 @@
             </Grid.ColumnDefinitions>
 
             <Border Margin="0,0,10,0"
-                    Background="#FF1F1F1F"
-                    BorderBrush="#FF101010"
+                    Background="{DynamicResource Background.Secondary}"
+                    BorderBrush="{DynamicResource Seperator.Background}"
                     BorderThickness="2"
                     Padding="18,16,18,16">
                 <StackPanel>
                     <TextBlock Text="{DynamicResource FirstLaunch_InstallType_Header}"
-                               Foreground="White"
+                               Foreground="{DynamicResource PrimaryText.Foreground}"
                                FontSize="18"
-                               FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten"/>
-                    <RadioButton x:Name="FixedRadioButton" Checked="FixedRadioButton_CheckChanged" Unchecked="FixedRadioButton_CheckChanged" IsChecked="True" Foreground="White" Content="{DynamicResource FirstLaunch_FixedInstall_Checkbox}" Margin="0,14,0,0" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" FontSize="13"/>
-                    <RadioButton x:Name="PortableRadioButton" Foreground="White" Content="{DynamicResource FirstLaunch_PortableInstall_Checkbox}" Margin="0,8,0,0" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" FontSize="13"/>
+                               FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten" />
+                    <RadioButton x:Name="FixedRadioButton" Checked="FixedRadioButton_CheckChanged" Unchecked="FixedRadioButton_CheckChanged" IsChecked="True" Foreground="{DynamicResource PrimaryText.Foreground}" Content="{DynamicResource FirstLaunch_FixedInstall_Checkbox}" Margin="0,14,0,0" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" FontSize="13" />
+                    <RadioButton x:Name="PortableRadioButton" Foreground="{DynamicResource PrimaryText.Foreground}" Content="{DynamicResource FirstLaunch_PortableInstall_Checkbox}" Margin="0,8,0,0" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" FontSize="13" />
                     <TextBlock Margin="0,14,0,0"
-                               Foreground="#FFD0D0D0"
+                               Foreground="{DynamicResource PrimaryText.Foreground}"
                                FontSize="12"
                                TextWrapping="Wrap"
                                FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"
-                               Text="Pick fixed mode if you want a clean permanent folder. Portable mode is better when you want everything to stay close to the launcher."/>
+                               Text="Pick fixed mode if you want a clean permanent folder. Portable mode is better when you want everything to stay close to the launcher." />
                 </StackPanel>
             </Border>
 
             <Border Grid.Column="1"
                     Margin="10,0,0,0"
-                    Background="#FF1F1F1F"
-                    BorderBrush="#FF101010"
+                    Background="{DynamicResource Background.Secondary}"
+                    BorderBrush="{DynamicResource Seperator.Background}"
                     BorderThickness="2"
                     Padding="18,16,18,16">
                 <StackPanel>
                     <TextBlock Text="Storage folder"
-                               Foreground="White"
+                               Foreground="{DynamicResource PrimaryText.Foreground}"
                                FontSize="18"
-                               FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten"/>
+                               FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten" />
                     <TextBlock Margin="0,12,0,0"
-                               Foreground="#FFD0D0D0"
+                               Foreground="{DynamicResource PrimaryText.Foreground}"
                                FontSize="12"
                                TextWrapping="Wrap"
                                FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"
-                               Text="This is where XylarBedrock keeps its files, settings and extras. You can leave the default path if you just want it to work."/>
+                               Text="This is where XylarBedrock keeps its files, settings and extras. You can leave the default path if you just want it to work." />
 
                     <Border Margin="0,16,0,0"
-                            Background="#FF141414"
-                            BorderBrush="#FF0D0D0D"
+                            Background="{DynamicResource Background.Secondary}"
+                            BorderBrush="{DynamicResource Seperator.Background}"
                             BorderThickness="1"
                             Padding="0">
                         <Grid x:Name="PathBox" Style="{DynamicResource DisabledStyle}">
@@ -93,7 +93,7 @@
                             </Grid.ColumnDefinitions>
                             <TextBox IsReadOnly="True" x:Name="StorageDirectoryTextBox" FontSize="14" Padding="10,4,5,3"/>
                             <Button Grid.Column="1" Content="{StaticResource GeneralSubtitles_Browse}" x:Name="BrowseDirectoryButton" Click="BrowseDirectoryButton_Click" HorizontalAlignment="Center" Margin="5" Style="{StaticResource TextBoxButton}"/>
-                            <Grid Grid.Column="2" Width="1" Background="Gray" Margin="2,5"/>
+                            <Grid Grid.Column="2" Width="1" Background="{DynamicResource Background.Secondary}" Margin="2,5" />
                             <Button Grid.Column="3" Content="{StaticResource GeneralSubtitles_Reset}" x:Name="ResetDirectoryButton" Click="ResetDirectoryButton_Click" HorizontalAlignment="Center" Margin="5" Style="{StaticResource TextBoxButton}"/>
                         </Grid>
                     </Border>
@@ -102,16 +102,16 @@
         </Grid>
 
         <Border Grid.Row="2"
-                Background="#FF171717"
-                BorderBrush="#FF0E0E0E"
+                Background="{DynamicResource Background.Secondary}"
+                BorderBrush="{DynamicResource Seperator.Background}"
                 BorderThickness="0,2,0,0">
             <StackPanel Margin="0,0,12,0"
                         Orientation="Horizontal"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
                         ScrollViewer.VerticalScrollBarVisibility="Disabled">
-                <Button x:Name="BackButton" Click="BackButton_Click" SnapsToDevicePixels="True" Foreground="White" Content="{DynamicResource FirstLaunch_BackButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Style="{DynamicResource DialogButton}"/>
-                <Button x:Name="NextButton" Click="NextButton_Click" SnapsToDevicePixels="True" Foreground="White" Content="{DynamicResource FirstLaunch_NextButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="32" Style="{DynamicResource DialogButton}"/>
+                <Button x:Name="BackButton" Click="BackButton_Click" SnapsToDevicePixels="True" Foreground="{DynamicResource PrimaryText.Foreground}" Content="{DynamicResource FirstLaunch_BackButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Style="{DynamicResource DialogButton}" />
+                <Button x:Name="NextButton" Click="NextButton_Click" SnapsToDevicePixels="True" Foreground="{DynamicResource PrimaryText.Foreground}" Content="{DynamicResource FirstLaunch_NextButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="32" Style="{DynamicResource DialogButton}" />
             </StackPanel>
         </Border>
     </Grid>

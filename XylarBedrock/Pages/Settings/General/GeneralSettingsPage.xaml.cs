@@ -61,8 +61,45 @@ namespace XylarBedrock.Pages.Settings.General
             Properties.LauncherSettings.Default.Save();
         }
 
+        private void DarkModeCheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            bool isDark = darkModeCheckBox.IsChecked ?? false;
+            Properties.LauncherSettings.Default.DarkMode = isDark;
+            Properties.LauncherSettings.Default.Save();
+            ApplyTheme(isDark);
+        }
+
+        private void ApplyTheme(bool isDark)
+        {
+            var resources = Application.Current.Resources;
+            ResourceDictionary themeDict = new ResourceDictionary();
+            
+            if (isDark)
+            {
+                themeDict.Source = new Uri("pack://application:,,,/XylarBedrock;component/Resources/styles/values/dark_values.xaml");
+            }
+            else
+            {
+                themeDict.Source = new Uri("pack://application:,,,/XylarBedrock;component/Resources/styles/values/base_values.xaml");
+            }
+
+            // Remove existing theme dictionary if present
+            for (int i = 0; i < resources.MergedDictionaries.Count; i++)
+            {
+                var dict = resources.MergedDictionaries[i];
+                if (dict.Source != null && dict.Source.OriginalString.Contains("values/"))
+                {
+                    resources.MergedDictionaries.RemoveAt(i);
+                    i--;
+                }
+            }
+            
+            resources.MergedDictionaries.Add(themeDict);
+        }
+
         private void useFixedInstallLocation_Click(object sender, RoutedEventArgs e)
         {
+
             switch (portableModeCheckBox.IsChecked)
             {
                 case true:

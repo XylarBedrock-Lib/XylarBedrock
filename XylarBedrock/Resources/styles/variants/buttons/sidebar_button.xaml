@@ -12,7 +12,7 @@
         <Setter Property="FontFamily" Value="/XylarBedrock;component/Resources/fonts/#Noto Sans"></Setter>
         <Setter Property="FontSize" Value="14"></Setter>
         <Setter Property="Padding" Value="55,1,1,1"></Setter>
-        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource BlankFocusVisual}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -31,7 +31,7 @@
                                     <RowDefinition MaxHeight="100"></RowDefinition>
                                     <RowDefinition></RowDefinition>
                                 </Grid.RowDefinitions>
-                                <Grid x:Name="selection_indicator" Focusable="False" Background="White" Grid.Column="0" Grid.Row="1"></Grid>
+                                <Grid x:Name="selection_indicator" Focusable="False" Background="{DynamicResource PrimaryText.Foreground}" Grid.Column="0" Grid.Row="1"></Grid>
                                 <ContentPresenter Grid.Column="1" Grid.RowSpan="3" x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                             </Grid>
                         </Border>
@@ -46,31 +46,15 @@
                                 <Condition Property="IsMouseOver" Value="True"/>
                                 <Condition Property="IsChecked" Value="False"/>
                             </MultiTrigger.Conditions>
-                            <MultiTrigger.EnterActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)" Duration="0:0:0.1" To="{StaticResource ButtonSide.MouseOver.Background}" From="{StaticResource ButtonSide.MainBackground}"/>
-                                        <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(BorderBrush).(SolidColorBrush.Color)" Duration="0:0:0.1" To="{StaticResource ButtonSide.MouseOver.Border}" From="{StaticResource ButtonSide.MainBackground}"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </MultiTrigger.EnterActions>
-                            <MultiTrigger.ExitActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)" Duration="0:0:0.1" From="{StaticResource ButtonSide.MouseOver.Background}" To="{StaticResource ButtonSide.MainBackground}"/>
-                                        <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(BorderBrush).(SolidColorBrush.Color)" Duration="0:0:0.1" From="{StaticResource ButtonSide.MouseOver.Border}" To="{StaticResource ButtonSide.MainBackground}"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </MultiTrigger.ExitActions>
+                            <MultiTrigger.Setters>
+                                <Setter Property="Background" TargetName="border" Value="{DynamicResource ButtonSide.MouseOver.BackgroundBrush}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource ButtonSide.MouseOver.BorderBrush}"/>
+                            </MultiTrigger.Setters>
                         </MultiTrigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Setter Property="Background" TargetName="border" Value="{DynamicResource ButtonSide.Pressed.Background}"/>
                             <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource ButtonSide.Pressed.Border}"/>
                             <Setter Property="Cursor" Value="Hand"/>
-                        </Trigger>
-                        <Trigger Property="IsKeyboardFocusWithin" Value="true">
-                            <Setter Property="Background" TargetName="focus_border" Value="{DynamicResource ButtonSide.Focused.Background}"/>
-                            <Setter Property="BorderBrush" TargetName="focus_border" Value="{DynamicResource ButtonSide.Focused.Border}"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="False">
                             <Setter TargetName="selection_indicator" Property="Visibility" Value="Collapsed"/>

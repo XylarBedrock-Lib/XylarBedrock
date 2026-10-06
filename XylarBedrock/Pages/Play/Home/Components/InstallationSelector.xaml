@@ -11,7 +11,7 @@
              Loaded="ComboBox_Loaded"
              d:DataContext="{d:DesignInstance Type=viewModels:MainDataModel}"
              mc:Ignorable="d" 
-             Foreground="White"
+             Foreground="{DynamicResource PrimaryText.Foreground}"
              SelectionChanged="ComboBox_SelectionChanged"
              SourceUpdated="ComboBox_SourceUpdated"
              IsSynchronizedWithCurrentItem="True"

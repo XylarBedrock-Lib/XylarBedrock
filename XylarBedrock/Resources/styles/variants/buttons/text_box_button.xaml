@@ -8,7 +8,7 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="Padding" Value="4,0"/>
-        <Setter Property="Foreground" Value="LightGray"/>
+        <Setter Property="Foreground" Value="{DynamicResource TextBoxButton.Foreground}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -16,29 +16,22 @@
                         <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                     </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsDefaulted" Value="true">
-                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                        </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" TargetName="border" Value="#2B2B2B"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource TextBoxButton.MouseOver.Background}"/>
                             <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="LightGray"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource TextBoxButton.Foreground}"/>
                             <Setter Property="Cursor" Value="Hand"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="Background" TargetName="border" Value="#1F1F1F"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource TextBoxButton.Pressed.Background}"/>
                             <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="LightGray"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource TextBoxButton.Foreground}"/>
                             <Setter Property="Cursor" Value="Hand"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Background" TargetName="border" Value="Transparent"/>
                             <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="Gray"/>
-                        </Trigger>
-                        <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="#2B2B2B"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{DynamicResource TextBoxButton.Disabled.Foreground}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

@@ -12,7 +12,7 @@
              Style="{DynamicResource GenericComboBoxStyle}" ItemContainerStyle="{DynamicResource GenericComboBoxItemStyle}"
              Initialized="LanguageCombobox_Initialized"
              Loaded="LanguageCombobox_Loaded"
-             Foreground="White"
+             Foreground="{DynamicResource PrimaryText.Foreground}"
              SelectedIndex="0"
              Padding="15,0"
              FontSize="14">

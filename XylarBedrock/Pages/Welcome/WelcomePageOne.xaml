@@ -17,11 +17,11 @@
         <StackPanel Margin="30,28,30,0">
             <TextBlock HorizontalAlignment="Left"
                        Text="Before you start"
-                       Foreground="White"
+                       Foreground="{DynamicResource PrimaryText.Foreground}"
                        FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten"
-                       FontSize="30"/>
+                       FontSize="30" />
             <TextBlock Margin="0,14,0,0"
-                       Foreground="#FFE2E2E2"
+                       Foreground="{DynamicResource PrimaryText.Foreground}"
                        FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"
                        FontSize="14"
                        TextWrapping="Wrap">
@@ -37,74 +37,74 @@
             </Grid.ColumnDefinitions>
 
             <Border Margin="0,0,10,0"
-                    Background="#FF1F1F1F"
-                    BorderBrush="#FF101010"
+                    Background="{DynamicResource Background.Secondary}"
+                    BorderBrush="{DynamicResource Seperator.Background}"
                     BorderThickness="2"
                     Padding="18,16,18,16">
                 <StackPanel>
                     <TextBlock Text="Minecraft for Windows"
-                               Foreground="White"
+                               Foreground="{DynamicResource PrimaryText.Foreground}"
                                FontSize="18"
-                               FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten"/>
+                               FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten" />
                     <TextBlock Margin="0,12,0,0"
-                               Foreground="#FFD8D8D8"
+                               Foreground="{DynamicResource PrimaryText.Foreground}"
                                FontSize="13"
                                TextWrapping="Wrap"
                                FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"
-                               Text="The launcher checks for the real Microsoft Store version. That keeps installs clean and makes the setup way less annoying later."/>
+                               Text="The launcher checks for the real Microsoft Store version. That keeps installs clean and makes the setup way less annoying later." />
                     <Border Margin="0,16,0,0"
-                            Background="#FF2B2B2B"
-                            BorderBrush="#FF151515"
+                            Background="{DynamicResource Background.Secondary}"
+                            BorderBrush="{DynamicResource Seperator.Background}"
                             BorderThickness="1"
                             Padding="10,8,10,8">
-                        <TextBlock Foreground="#FFF2D35A"
+                        <TextBlock Foreground="{DynamicResource PrimaryText.Foreground}"
                                    FontSize="12"
                                    TextWrapping="Wrap"
                                    FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten"
-                                   Text="Free trial works too."/>
+                                   Text="Free trial works too." />
                     </Border>
                 </StackPanel>
             </Border>
 
             <Border Grid.Column="1"
                     Margin="10,0,0,0"
-                    Background="#FF1F1F1F"
-                    BorderBrush="#FF101010"
+                    Background="{DynamicResource Background.Secondary}"
+                    BorderBrush="{DynamicResource Seperator.Background}"
                     BorderThickness="2"
                     Padding="18,16,18,16">
                 <StackPanel>
                     <TextBlock Text="Automatic checkup"
-                               Foreground="White"
+                               Foreground="{DynamicResource PrimaryText.Foreground}"
                                FontSize="18"
-                               FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten"/>
+                               FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten" />
                     <TextBlock Margin="0,12,0,0"
-                               Foreground="#FFD8D8D8"
+                               Foreground="{DynamicResource PrimaryText.Foreground}"
                                FontSize="13"
                                TextWrapping="Wrap"
                                FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"
-                               Text="If Microsoft Visual C++ x64 Runtime is missing, XylarBedrock will try the official Microsoft install for you when it starts."/>
+                               Text="If Microsoft Visual C++ x64 Runtime is missing, XylarBedrock will try the official Microsoft install for you when it starts." />
                     <TextBlock Margin="0,12,0,0"
-                               Foreground="#FFC9D7E7"
+                               Foreground="{DynamicResource PrimaryText.Foreground}"
                                FontSize="12"
                                TextWrapping="Wrap"
                                FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"
-                               Text="Use the Store button if you want to jump straight to the official page."/>
+                               Text="Use the Store button if you want to jump straight to the official page." />
                 </StackPanel>
             </Border>
         </Grid>
 
         <Border Grid.Row="2"
-                Background="#FF171717"
-                BorderBrush="#FF0E0E0E"
+                Background="{DynamicResource Background.Secondary}"
+                BorderBrush="{DynamicResource Seperator.Background}"
                 BorderThickness="0,2,0,0">
             <StackPanel Margin="0,0,12,0"
                         Orientation="Horizontal"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"
                         ScrollViewer.VerticalScrollBarVisibility="Disabled">
-                <Button x:Name="OpenStoreButton" Click="OpenStoreButton_Click" SnapsToDevicePixels="True" Foreground="White" Style="{DynamicResource DialogButton_Green}" Content="Open Microsoft Store" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32"/>
-                <Button x:Name="CloseButton" Click="CloseButton_Click" SnapsToDevicePixels="True" Foreground="White" Style="{DynamicResource DialogButton}" Content="{DynamicResource FirstLaunch_CloseButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32"/>
-                <Button x:Name="NextButton" Click="NextButton_Click" SnapsToDevicePixels="True" Style="{DynamicResource DialogButton}" Foreground="White" Content="{DynamicResource FirstLaunch_NextButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="32"/>
+                <Button x:Name="OpenStoreButton" Click="OpenStoreButton_Click" SnapsToDevicePixels="True" Foreground="{DynamicResource PrimaryText.Foreground}" Style="{DynamicResource DialogButton_Green}" Content="Open Microsoft Store" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" />
+                <Button x:Name="CloseButton" Click="CloseButton_Click" SnapsToDevicePixels="True" Foreground="{DynamicResource PrimaryText.Foreground}" Style="{DynamicResource DialogButton}" Content="{DynamicResource FirstLaunch_CloseButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" />
+                <Button x:Name="NextButton" Click="NextButton_Click" SnapsToDevicePixels="True" Style="{DynamicResource DialogButton}" Foreground="{DynamicResource PrimaryText.Foreground}" Content="{DynamicResource FirstLaunch_NextButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="32" />
             </StackPanel>
         </Border>
     </Grid>

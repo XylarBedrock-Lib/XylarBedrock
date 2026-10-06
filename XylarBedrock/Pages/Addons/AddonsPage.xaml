@@ -9,22 +9,22 @@
       d:DesignHeight="1080"
       d:DesignWidth="1920"
       Title="AddonsPage"
-      Background="#FF1B1B1B">
+      Background="{DynamicResource Background.Primary}">
     <Page.Resources>
         <Style x:Key="SectionTitleText" TargetType="{x:Type TextBlock}">
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryText.Foreground}" />
             <Setter Property="FontSize" Value="17"/>
             <Setter Property="FontFamily" Value="/XylarBedrock;component/Resources/fonts/#Minecraft Ten"/>
         </Style>
 
         <Style x:Key="AddonRibbonText" TargetType="{x:Type TextBlock}">
-            <Setter Property="Foreground" Value="#FFF6D04F"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryText.Foreground}"/>
             <Setter Property="FontSize" Value="17"/>
             <Setter Property="FontFamily" Value="/XylarBedrock;component/Resources/fonts/#Minecraft Ten"/>
         </Style>
 
         <Style x:Key="SpinnerArcStroke" TargetType="{x:Type Path}">
-            <Setter Property="Stroke" Value="White"/>
+            <Setter Property="Stroke" Value="{DynamicResource PrimaryText.Foreground}" />
             <Setter Property="StrokeThickness" Value="4.2"/>
             <Setter Property="StrokeStartLineCap" Value="Round"/>
             <Setter Property="StrokeEndLineCap" Value="Round"/>
@@ -39,8 +39,8 @@
                     Padding="0"
                     Margin="0,0,12,0"
                     Width="244">
-                <Border Background="#FF505050"
-                        BorderBrush="#FF232323"
+                <Border Background="{DynamicResource Background.Secondary}"
+                        BorderBrush="{DynamicResource Seperator.Background}"
                         BorderThickness="1">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -55,7 +55,7 @@
                                     VerticalAlignment="Bottom"
                                     Margin="0,0,0,10"
                                     Width="164"
-                                    Background="#CC171717"
+                                    Background="{DynamicResource Background.Secondary}"
                                     BorderBrush="#FFF6D04F"
                                     BorderThickness="0,0,0,0"
                                     Padding="12,6,12,6">
@@ -65,7 +65,7 @@
                         </Grid>
 
                         <Grid Grid.Row="1"
-                              Background="#FF535353">
+                              Background="{DynamicResource Background.Secondary}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
@@ -74,17 +74,17 @@
 
                             <TextBlock Margin="10,8,10,0"
                                        Text="{Binding Title}"
-                                       Foreground="White"
+                                       Foreground="{DynamicResource PrimaryText.Foreground}"
                                        FontSize="15"
                                        TextTrimming="CharacterEllipsis"
-                                       FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
+                                       FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" />
                             <TextBlock Grid.Row="1"
                                        Margin="10,4,10,0"
                                        Text="{Binding Author, StringFormat=By {0}}"
-                                       Foreground="#FFD8D8D8"
+                                       Foreground="{DynamicResource PrimaryText.Foreground}"
                                        FontSize="12"
                                        TextTrimming="CharacterEllipsis"
-                                       FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
+                                       FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" />
                         </Grid>
                     </Grid>
                 </Border>
@@ -99,8 +99,8 @@
                     Padding="0"
                     Margin="0,0,12,0"
                     Width="300">
-                <Border Background="#FF4F4F4F"
-                        BorderBrush="#FF202020"
+                <Border Background="{DynamicResource Background.Secondary}"
+                        BorderBrush="{DynamicResource Seperator.Background}"
                         BorderThickness="1">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -115,7 +115,7 @@
                                     VerticalAlignment="Bottom"
                                     Margin="0,0,0,10"
                                     Width="164"
-                                    Background="#CC171717"
+                                    Background="{DynamicResource Background.Secondary}"
                                     Padding="12,6,12,6">
                                 <TextBlock Text="Add-On"
                                            Style="{StaticResource AddonRibbonText}"/>
@@ -123,24 +123,24 @@
                         </Grid>
 
                         <Grid Grid.Row="1"
-                              Background="#FF525252">
+                              Background="{DynamicResource Background.Secondary}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
                             <TextBlock Margin="10,8,10,0"
                                        Text="{Binding Title}"
-                                       Foreground="White"
+                                       Foreground="{DynamicResource PrimaryText.Foreground}"
                                        FontSize="14"
                                        TextTrimming="CharacterEllipsis"
-                                       FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
+                                       FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" />
                             <TextBlock Grid.Row="1"
                                        Margin="10,4,10,0"
                                        Text="{Binding Author, StringFormat=By {0}}"
-                                       Foreground="#FFD8D8D8"
+                                       Foreground="{DynamicResource PrimaryText.Foreground}"
                                        FontSize="12"
                                        TextTrimming="CharacterEllipsis"
-                                       FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
+                                       FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" />
                         </Grid>
                     </Grid>
                 </Border>
@@ -155,8 +155,8 @@
                     Padding="0"
                     Margin="0,0,12,12"
                     Width="286">
-                <Border Background="#FF505050"
-                        BorderBrush="#FF232323"
+                <Border Background="{DynamicResource Background.Secondary}"
+                        BorderBrush="{DynamicResource Seperator.Background}"
                         BorderThickness="1">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -171,7 +171,7 @@
                                     VerticalAlignment="Bottom"
                                     Margin="0,0,0,10"
                                     Width="176"
-                                    Background="#CC171717"
+                                    Background="{DynamicResource Background.Secondary}"
                                     BorderBrush="#FFF6D04F"
                                     BorderThickness="0,0,0,0"
                                     Padding="12,6,12,6">
@@ -181,7 +181,7 @@
                         </Grid>
 
                         <Grid Grid.Row="1"
-                              Background="#FF535353">
+                              Background="{DynamicResource Background.Secondary}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
@@ -189,17 +189,17 @@
 
                             <TextBlock Margin="10,8,10,0"
                                        Text="{Binding Title}"
-                                       Foreground="White"
+                                       Foreground="{DynamicResource PrimaryText.Foreground}"
                                        FontSize="15"
                                        TextTrimming="CharacterEllipsis"
-                                       FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
+                                       FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" />
                             <TextBlock Grid.Row="1"
                                        Margin="10,4,10,0"
                                        Text="{Binding Author, StringFormat=By {0}}"
-                                       Foreground="#FFD8D8D8"
+                                       Foreground="{DynamicResource PrimaryText.Foreground}"
                                        FontSize="12"
                                        TextTrimming="CharacterEllipsis"
-                                       FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
+                                       FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" />
                         </Grid>
                     </Grid>
                 </Border>
@@ -207,7 +207,7 @@
         </DataTemplate>
     </Page.Resources>
 
-    <Grid Background="#FF1B1B1B">
+    <Grid Background="{DynamicResource Background.Secondary}">
         <Grid.RowDefinitions>
             <RowDefinition Height="46"/>
             <RowDefinition/>
@@ -216,17 +216,18 @@
         <Grid Grid.RowSpan="2">
             <Image Source="/XylarBedrock;component/resources/images/bg/addonsminecraft.png"
                    Stretch="UniformToFill"
+                   CacheMode="BitmapCache"
                    RenderOptions.BitmapScalingMode="Fant">
                 <Image.Effect>
-                    <BlurEffect Radius="6"/>
+                    <BlurEffect Radius="6" RenderingBias="Performance"/>
                 </Image.Effect>
             </Image>
-            <Border Background="#C6141414"/>
+            <Border Background="{DynamicResource Background.Secondary}" />
         </Grid>
 
         <Border Grid.Row="0"
-                Background="#FFCCCCCC"
-                BorderBrush="#FF8A8A8A"
+                Background="{DynamicResource Background.Secondary}"
+                BorderBrush="{DynamicResource Seperator.Background}"
                 BorderThickness="0,0,0,1">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -241,19 +242,19 @@
                         Width="44"
                         Background="Transparent"
                         BorderThickness="0"
-                        Foreground="#FF303030"
+                        Foreground="{DynamicResource PrimaryText.Foreground}"
                         FontSize="30"
                         FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"
                         Content="&#x2039;"
-                        Visibility="Collapsed"/>
+                        Visibility="Collapsed" />
 
                 <TextBlock Grid.Column="1"
                            Text="{Binding CurrentHeaderTitle}"
                            Margin="12,0,0,0"
                            VerticalAlignment="Center"
-                           Foreground="#FF303030"
+                           Foreground="{DynamicResource PrimaryText.Foreground}"
                            FontSize="18"
-                           FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten"/>
+                           FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten" />
 
                 <Grid Grid.Column="2"
                       Margin="0,4,6,4">
@@ -262,23 +263,23 @@
                         <ColumnDefinition Width="44"/>
                     </Grid.ColumnDefinitions>
 
-                    <Border Background="#FF4B4B4B"
-                            BorderBrush="#FF2D2D2D"
-                            BorderThickness="2"/>
+                    <Border Background="{DynamicResource Background.Secondary}"
+                            BorderBrush="{DynamicResource Seperator.Background}"
+                            BorderThickness="2" />
                     <TextBox x:Name="SearchBox"
                              Margin="10,0,0,0"
                              Background="Transparent"
                              BorderThickness="0"
-                             Foreground="White"
+                             Foreground="{DynamicResource PrimaryText.Foreground}"
                              VerticalContentAlignment="Center"
                              FontSize="16"
                              Tag="{DynamicResource AddonsPage_SearchPlaceholder}"
                              Style="{DynamicResource BlankTextBox}"
-                             KeyDown="SearchBox_KeyDown"/>
+                             KeyDown="SearchBox_KeyDown" />
                     <Button Grid.Column="1"
                             Click="SearchButton_Click"
-                            Background="#FF111111"
-                            BorderBrush="#FF050505"
+                            Background="{DynamicResource Button.Static.Background}"
+                            BorderBrush="{DynamicResource Button.Static.Border}"
                             BorderThickness="2">
                         <Image Width="18"
                                Height="18"
@@ -344,7 +345,7 @@
                                         Padding="0"
                                         Margin="0,0,12,0">
                                     <Grid>
-                                        <Border BorderBrush="#FF1C1C1C"
+                                        <Border BorderBrush="{DynamicResource Seperator.Background}"
                                                 BorderThickness="2">
                                             <Image Source="{Binding FeaturedAddon.ImagePath}"
                                                    Stretch="UniformToFill"/>
@@ -353,12 +354,12 @@
                                                 VerticalAlignment="Bottom"
                                                 Margin="10,0,0,14"
                                                 Width="184"
-                                                Background="#D61B1B1B"
+                                                Background="{DynamicResource Background.Secondary}"
                                                 BorderBrush="#FFF6D04F"
                                                 BorderThickness="2"
                                                 Padding="16,8,16,8">
                                             <TextBlock Text="Add-On"
-                                                       Foreground="#FFF6D04F"
+                                                       Foreground="{DynamicResource PrimaryText.Foreground}"
                                                        FontSize="21"
                                                        FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten"/>
                                         </Border>
@@ -380,21 +381,21 @@
                                                     BorderThickness="0"
                                                     Padding="0"
                                                     Margin="0,0,0,10">
-                                                <Border BorderBrush="#FF1C1C1C"
+                                                <Border BorderBrush="{DynamicResource Seperator.Background}"
                                                         BorderThickness="1"
                                                         Margin="0,0,10,0">
                                                     <Grid>
                                                         <Image Source="{Binding ImagePath}"
                                                                Stretch="UniformToFill"/>
-                                                        <Border Background="#B3141414"
+                                                        <Border Background="{DynamicResource Background.Secondary}"
                                                                 VerticalAlignment="Bottom"
                                                                 Height="42">
                                                             <TextBlock Margin="9,9,9,0"
                                                                        Text="{Binding Title}"
-                                                                       Foreground="White"
+                                                                       Foreground="{DynamicResource PrimaryText.Foreground}"
                                                                        FontSize="11"
                                                                        TextTrimming="CharacterEllipsis"
-                                                                       FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
+                                                                       FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" />
                                                         </Border>
                                                     </Grid>
                                                 </Border>
@@ -419,8 +420,8 @@
                                                 BorderThickness="0"
                                                 Padding="0"
                                                 Margin="0,0,12,0">
-                                            <Border Background="#FF2F2F2F"
-                                                    BorderBrush="#FF161616"
+                                            <Border Background="{DynamicResource Background.Secondary}"
+                                                    BorderBrush="{DynamicResource Seperator.Background}"
                                                     BorderThickness="2"
                                                     Height="96">
                                                 <Grid>
@@ -430,16 +431,16 @@
                                                     </Grid.ColumnDefinitions>
                                                     <StackPanel Margin="16,12,16,12">
                                                         <TextBlock Text="{Binding Title}"
-                                                                   Foreground="White"
+                                                                   Foreground="{DynamicResource PrimaryText.Foreground}"
                                                                    FontSize="14"
                                                                    TextTrimming="CharacterEllipsis"
-                                                                   FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
+                                                                   FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" />
                                                         <TextBlock Margin="0,6,0,0"
                                                                    Text="{Binding Description}"
-                                                                   Foreground="#FFD8D8D8"
+                                                                   Foreground="{DynamicResource PrimaryText.Foreground}"
                                                                    FontSize="11"
                                                                    TextTrimming="CharacterEllipsis"
-                                                                   FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
+                                                                   FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" />
                                                     </StackPanel>
                                                     <Image Grid.Column="1"
                                                            Source="{Binding ImagePath}"
@@ -465,12 +466,12 @@
                                 <Button x:Name="ShelfOneLeftButton"
                                         Grid.Column="0"
                                         Click="ShelfOneScrollLeft_Click"
-                                        Background="#FF757575"
-                                        BorderBrush="#FF1D1D1D"
+                                        Background="{DynamicResource Button.Static.Background}"
+                                        BorderBrush="{DynamicResource Button.Static.Border}"
                                         BorderThickness="1"
-                                        Foreground="White"
+                                        Foreground="{DynamicResource PrimaryText.Foreground}"
                                         FontSize="26"
-                                        Content="&#x2039;"/>
+                                        Content="&#x2039;" />
 
                                 <Border Grid.Column="1"
                                         Margin="8,0"
@@ -494,12 +495,12 @@
                                 <Button x:Name="ShelfOneRightButton"
                                         Grid.Column="2"
                                         Click="ShelfOneScrollRight_Click"
-                                        Background="#FF757575"
-                                        BorderBrush="#FF1D1D1D"
+                                        Background="{DynamicResource Button.Static.Background}"
+                                        BorderBrush="{DynamicResource Button.Static.Border}"
                                         BorderThickness="1"
-                                        Foreground="White"
+                                        Foreground="{DynamicResource PrimaryText.Foreground}"
                                         FontSize="26"
-                                        Content="&#x203A;"/>
+                                        Content="&#x203A;" />
                             </Grid>
 
                             <TextBlock Text="More from the launcher"
@@ -521,16 +522,16 @@
                                 <StackPanel HorizontalAlignment="Center">
                                     <TextBlock Text="{DynamicResource AddonsPage_NoResultsTitle}"
                                                HorizontalAlignment="Center"
-                                               Foreground="White"
+                                               Foreground="{DynamicResource PrimaryText.Foreground}"
                                                FontSize="22"
-                                               FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten"/>
+                                               FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten" />
                                     <TextBlock x:Name="NoResultsText"
                                                Margin="0,10,0,0"
                                                Text="{DynamicResource AddonsPage_NoResultsText}"
                                                HorizontalAlignment="Center"
-                                               Foreground="#FFD0D0D0"
+                                               Foreground="{DynamicResource PrimaryText.Foreground}"
                                                FontSize="13"
-                                               FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
+                                               FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" />
                                 </StackPanel>
                             </Grid>
 
@@ -539,17 +540,17 @@
                                 <TextBlock x:Name="ResultsSummaryText"
                                            Margin="0,12,0,0"
                                            HorizontalAlignment="Center"
-                                           Foreground="#FFD0D0D0"
+                                           Foreground="{DynamicResource PrimaryText.Foreground}"
                                            FontSize="12"
                                            FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"
-                                           Text="{DynamicResource AddonsPage_LoadingSummary}"/>
+                                           Text="{DynamicResource AddonsPage_LoadingSummary}" />
                                 <TextBlock x:Name="PageIndicatorText"
                                            Margin="0,6,0,0"
                                            Text="{DynamicResource AddonsPage_PageIndicatorDefault}"
                                            HorizontalAlignment="Center"
-                                           Foreground="#FFC5D0DA"
+                                           Foreground="{DynamicResource SecondaryText.Foreground}"
                                            FontSize="12"
-                                           FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
+                                           FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" />
                                 <Button Margin="0,12,0,0"
                                         x:Name="LoadMoreButton"
                                         Click="LoadMoreButton_Click"
@@ -577,7 +578,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Border BorderBrush="#FF131313"
+                                <Border BorderBrush="{DynamicResource Seperator.Background}"
                                         BorderThickness="2">
                                     <Grid>
                                         <Image Source="{Binding SelectedAddon.ImagePath}"
@@ -586,12 +587,12 @@
                                                 VerticalAlignment="Bottom"
                                                 Margin="10,0,0,14"
                                                 Width="184"
-                                                Background="#D61B1B1B"
+                                                Background="{DynamicResource Background.Secondary}"
                                                 BorderBrush="#FFF6D04F"
                                                 BorderThickness="2"
                                                 Padding="16,8,16,8">
                                             <TextBlock Text="Add-On"
-                                                       Foreground="#FFF6D04F"
+                                                       Foreground="{DynamicResource PrimaryText.Foreground}"
                                                        FontSize="21"
                                                        FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten"/>
                                         </Border>
@@ -604,7 +605,7 @@
                                         <ImageBrush ImageSource="{Binding SelectedAddon.ImagePath}"
                                                     Stretch="UniformToFill"/>
                                     </Grid.Background>
-                                    <Border Background="#8C171717"/>
+                                    <Border Background="{DynamicResource Background.Secondary}" />
                                     <Grid Margin="16">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto"/>
@@ -616,21 +617,21 @@
                                         </Grid.RowDefinitions>
 
                                         <TextBlock Text="{Binding SelectedAddon.Title}"
-                                                   Foreground="White"
+                                                   Foreground="{DynamicResource PrimaryText.Foreground}"
                                                    FontSize="19"
-                                                   FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
+                                                   FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" />
                                         <TextBlock Grid.Row="1"
                                                    Margin="0,6,0,0"
                                                    Text="{Binding SelectedAddonAuthorText}"
-                                                   Foreground="#FFE0E0E0"
+                                                   Foreground="{DynamicResource PrimaryText.Foreground}"
                                                    FontSize="14"
-                                                   FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
+                                                   FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" />
                                         <TextBlock Grid.Row="2"
                                                    Margin="0,10,0,0"
                                                    Text="{Binding SelectedAddonMetaText}"
-                                                   Foreground="#FFD7D7D7"
+                                                   Foreground="{DynamicResource PrimaryText.Foreground}"
                                                    FontSize="13"
-                                                   FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
+                                                   FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" />
                                         <Button Grid.Row="3"
                                                 x:Name="DownloadAddonButton"
                                                 Margin="0,14,0,0"
@@ -639,12 +640,12 @@
                                                 HorizontalAlignment="Left"
                                                 Click="DownloadSelectedAddonButton_Click"
                                                 Background="#FFE3C94A"
-                                                BorderBrush="#FF1F1F1F"
+                                                BorderBrush="{DynamicResource Button.Static.Border}"
                                                 BorderThickness="2">
                                             <TextBlock Text="{Binding SelectedAddonActionText}"
-                                                       Foreground="#FF1E1E1E"
+                                                       Foreground="{DynamicResource PrimaryText.Foreground}"
                                                        FontSize="15"
-                                                       FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten"/>
+                                                       FontFamily="/XylarBedrock;component/Resources/fonts/#Minecraft Ten" />
                                         </Button>
                                         <ProgressBar Grid.Row="4"
                                                      x:Name="DownloadLoadingBar"
@@ -657,25 +658,25 @@
                                         <TextBlock Grid.Row="4"
                                                    x:Name="DownloadStatusText"
                                                    Margin="0,22,0,0"
-                                                   Foreground="#FFE0E0E0"
+                                                   Foreground="{DynamicResource PrimaryText.Foreground}"
                                                    FontSize="11"
                                                    FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"
-                                                   Visibility="Collapsed"/>
+                                                   Visibility="Collapsed" />
                                     </Grid>
                                 </Grid>
                             </Grid>
 
-                            <Border Background="#C9161616"
-                                    BorderBrush="#FF7D7D7D"
+                            <Border Background="{DynamicResource Background.Secondary}"
+                                    BorderBrush="{DynamicResource Seperator.Background}"
                                     BorderThickness="2"
                                     Padding="10"
                                     Margin="0,0,0,16">
                                 <Grid>
                                     <TextBlock Text="{Binding SelectedAddonDescription}"
-                                               Foreground="White"
+                                               Foreground="{DynamicResource PrimaryText.Foreground}"
                                                FontSize="13"
                                                TextWrapping="Wrap"
-                                               FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans"/>
+                                               FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" />
                                 </Grid>
                             </Border>
 
@@ -722,12 +723,13 @@
                     <Grid>
                         <Image Source="/XylarBedrock;component/resources/images/bg/addonsminecraft.png"
                                Stretch="UniformToFill"
+                               CacheMode="BitmapCache"
                                RenderOptions.BitmapScalingMode="Fant">
                             <Image.Effect>
-                                <BlurEffect Radius="18"/>
+                                <BlurEffect Radius="18" RenderingBias="Performance"/>
                             </Image.Effect>
                         </Image>
-                        <Border Background="#E6101010"/>
+                        <Border Background="{DynamicResource Background.Secondary}" />
                     </Grid>
                     <Grid>
                         <Viewbox Width="46"

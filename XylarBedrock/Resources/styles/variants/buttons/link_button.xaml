@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style x:Key="LinkButton" TargetType="{x:Type Button}">
         <Setter Property="Padding" Value="0"/>
-        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Foreground" Value="{DynamicResource LinkButton.Foreground}" />
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="FontWeight" Value="DemiBold" />
         <Setter Property="FontFamily" Value="/XylarBedrock;component/#Noto Sans"/>
@@ -28,7 +28,7 @@
                                     <DrawingImage>
                                         <DrawingImage.Drawing>
                                             <DrawingGroup ClipGeometry="M0,0 V32 H32 V0 H0 Z">
-                                                <GeometryDrawing Brush="White">
+                                                <GeometryDrawing Brush="{DynamicResource LinkButton.Foreground}">
                                                     <GeometryDrawing.Geometry>
                                                         <Geometry>F1 M32,32z M0,0z M18,5L18,7 23.5625,7 11.28125,19.28125 12.71875,20.71875 25,8.4375 25,14 27,14 27,5z M5,9L5,27 23,27 23,14 21,16 21,25 7,25 7,11 16,11 18,9z</Geometry>
                                                     </GeometryDrawing.Geometry>
@@ -47,13 +47,10 @@
         <Setter Property="Cursor" Value="Hand" />
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Background" Value="#5C5C5C" />
-            </Trigger>
-            <Trigger Property="IsFocused" Value="true">
-                <Setter Property="Background" Value="#5C5C5C" />
+                <Setter Property="Background" Value="{DynamicResource LinkButton.MouseOver.Background}" />
             </Trigger>
             <Trigger Property="IsPressed" Value="true">
-                <Setter Property="Background" Value="#515151" />
+                <Setter Property="Background" Value="{DynamicResource LinkButton.Pressed.Background}" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Opacity" Value="0.25" />

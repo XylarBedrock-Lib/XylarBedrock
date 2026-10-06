@@ -82,11 +82,11 @@
     </UserControl.Resources>
     <Grid>
         <Canvas Width="{StaticResource CanvasWidth}" Height="{StaticResource CanvasWidth}" ClipToBounds="True">
-            <Grid Background="White" Style="{StaticResource ShrinkingCube}"/>
-            <Grid Background="White" Height="{StaticResource CubeWidth}" Width="{StaticResource CubeWidth}" Canvas.Left="0" Canvas.Top="{StaticResource CubeWidth}"/>
-            <Grid Background="White" Style="{StaticResource GridDrop1}"/>
-            <Grid Background="White" Style="{StaticResource GridDrop2}"/>
-            <Grid Background="White" Style="{StaticResource GridDrop3}"/>
+            <Grid Background="{DynamicResource Background.Secondary}" Style="{StaticResource ShrinkingCube}" />
+            <Grid Background="{DynamicResource Background.Secondary}" Height="{StaticResource CubeWidth}" Width="{StaticResource CubeWidth}" Canvas.Left="0" Canvas.Top="{StaticResource CubeWidth}" />
+            <Grid Background="{DynamicResource Background.Secondary}" Style="{StaticResource GridDrop1}" />
+            <Grid Background="{DynamicResource Background.Secondary}" Style="{StaticResource GridDrop2}" />
+            <Grid Background="{DynamicResource Background.Secondary}" Style="{StaticResource GridDrop3}" />
         </Canvas>
     </Grid>
 </UserControl>

@@ -27,7 +27,7 @@
             <Setter Property="ErrorForeground" Value="Red"></Setter>
             <Setter Property="FatalForeground" Value="OrangeRed"></Setter>
             <Setter Property="InfoForeground"  Value="Blue"></Setter>
-            <Setter Property="TraceForeground" Value="White"></Setter>
+            <Setter Property="TraceForeground" Value="{DynamicResource PrimaryText.Foreground}"></Setter>
             <Setter Property="WarnForeground"  Value="Yellow"></Setter>
         </Style>
     </UserControl.Resources>
@@ -38,7 +38,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Grid Background="#FF303030">
+        <Grid Background="{DynamicResource Background.Secondary}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition MinWidth="200" Width="Auto"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
@@ -47,31 +47,31 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0" Margin="10" VerticalAlignment="Center">
                 <StackPanel>
-                    <TextBlock Foreground="White" Text="FILTER" Margin="0,0,0,4" FontWeight="Bold" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" VerticalAlignment="Top" Background="{x:Null}"/>
+                    <TextBlock Foreground="{DynamicResource PrimaryText.Foreground}" Text="FILTER" Margin="0,0,0,4" FontWeight="Bold" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" VerticalAlignment="Top" Background="{x:Null}" />
                     <TextBox Grid.Column="1" Height="30" Tag="Filter by text..." Text="{Binding Path=FilterText, Mode=OneWayToSource}" KeyDown="TextBox_TextChanged"></TextBox>
                 </StackPanel>
             </Grid>
 
             <Grid Grid.Column="1" Margin="10" VerticalAlignment="Center">
                 <StackPanel>
-                    <TextBlock Foreground="White" Text="LEVELS" Margin="4,0,0,0" FontWeight="Bold" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" VerticalAlignment="Top" Background="{x:Null}"/>
+                    <TextBlock Foreground="{DynamicResource PrimaryText.Foreground}" Text="LEVELS" Margin="4,0,0,0" FontWeight="Bold" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" VerticalAlignment="Top" Background="{x:Null}" />
                     <StackPanel HorizontalAlignment="Left" Height="30" VerticalAlignment="Center" Width="Auto" Orientation="Horizontal" Margin="0,0,0,0">
-                        <CheckBox Content="debug"  IsChecked="{Binding Path=LvlDebug, Mode=TwoWay}" Foreground="#FFCCCCCC" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" ></CheckBox>
-                        <CheckBox Content="info"   IsChecked="{Binding Path=LvlInfo, Mode=TwoWay}" Foreground="#FFCCCCCC" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" ></CheckBox>
-                        <CheckBox Content="warn"   IsChecked="{Binding Path=LvlWarn, Mode=TwoWay}" Foreground="#FFCCCCCC" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" ></CheckBox>
-                        <CheckBox Content="error"  IsChecked="{Binding Path=LvlError, Mode=TwoWay}" Foreground="#FFCCCCCC" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" ></CheckBox>
-                        <CheckBox Content="fatal"  IsChecked="{Binding Path=LvlFatal, Mode=TwoWay}" Foreground="#FFCCCCCC" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" ></CheckBox>
+                        <CheckBox Content="debug"  IsChecked="{Binding Path=LvlDebug, Mode=TwoWay}" Foreground="{DynamicResource PrimaryText.Foreground}" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"></CheckBox>
+                        <CheckBox Content="info"   IsChecked="{Binding Path=LvlInfo, Mode=TwoWay}" Foreground="{DynamicResource PrimaryText.Foreground}" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"></CheckBox>
+                        <CheckBox Content="warn"   IsChecked="{Binding Path=LvlWarn, Mode=TwoWay}" Foreground="{DynamicResource PrimaryText.Foreground}" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"></CheckBox>
+                        <CheckBox Content="error"  IsChecked="{Binding Path=LvlError, Mode=TwoWay}" Foreground="{DynamicResource PrimaryText.Foreground}" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"></CheckBox>
+                        <CheckBox Content="fatal"  IsChecked="{Binding Path=LvlFatal, Mode=TwoWay}" Foreground="{DynamicResource PrimaryText.Foreground}" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"></CheckBox>
                     </StackPanel>
                 </StackPanel>
             </Grid>
             <Grid Grid.Column="2" Margin="10" VerticalAlignment="Center">
                 <StackPanel>
-                    <TextBlock Foreground="White" Text="ACTIONS" Margin="4,0,0,0" FontWeight="Bold" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" VerticalAlignment="Top" Background="{x:Null}"/>
+                    <TextBlock Foreground="{DynamicResource PrimaryText.Foreground}" Text="ACTIONS" Margin="4,0,0,0" FontWeight="Bold" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" VerticalAlignment="Top" Background="{x:Null}" />
                     <StackPanel Orientation="Horizontal">
                         <Button Style="{DynamicResource DialogButton}" Height="30" Content="Clear all logs" Command="{Binding Path=ClearCommand}"></Button>
                         <StackPanel VerticalAlignment="Center">
-                            <CheckBox IsChecked="{Binding Path=Pause, Mode=TwoWay}" Content="Pause" Foreground="#FFCCCCCC" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" ></CheckBox>
-                            <CheckBox IsChecked="{Binding Path=AutoScroll, Mode=TwoWay}" Content="Auto Scroll" Foreground="#FFCCCCCC" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" ></CheckBox>
+                            <CheckBox IsChecked="{Binding Path=Pause, Mode=TwoWay}" Content="Pause" Foreground="{DynamicResource PrimaryText.Foreground}" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"></CheckBox>
+                            <CheckBox IsChecked="{Binding Path=AutoScroll, Mode=TwoWay}" Content="Auto Scroll" Foreground="{DynamicResource PrimaryText.Foreground}" FontFamily="/XylarBedrock;component/Resources/fonts/#Noto Sans" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"></CheckBox>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>

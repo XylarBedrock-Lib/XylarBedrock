@@ -57,7 +57,7 @@ namespace XylarBedrock.Properties
 
         public void Init()
         {
-            MainDataModel.BackwardsCommunicationHost.UpdateAnimatePageTransitions(_AnimatePageTransitions);
+            MainDataModel.BackwardsCommunicationHost?.UpdateAnimatePageTransitions(_AnimatePageTransitions);
         }
 
         public void Save()
@@ -99,10 +99,11 @@ namespace XylarBedrock.Properties
             set
             {
                 _AnimatePageTransitions = value;
-                MainDataModel.BackwardsCommunicationHost.UpdateAnimatePageTransitions(value);
+                MainDataModel.BackwardsCommunicationHost?.UpdateAnimatePageTransitions(value);
             }
         }
         public string CurrentTheme { get; set; } = "LatestUpdate";
+        public bool DarkMode { get; set; } = false;
         public bool KeepLauncherOpen { get; set; } = false;
         public bool KeepAppx { get; set; } = false;
         public bool UseBetaBuilds { get; set; } = false;

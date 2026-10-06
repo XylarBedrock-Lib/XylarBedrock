@@ -14,19 +14,19 @@
         <Grid.Effect>
             <DropShadowEffect BlurRadius="6" Direction="0" ShadowDepth="0" Color="#F2000000"/>
         </Grid.Effect>
-        <Border CornerRadius="2" Background="#FF262626" Width="600" Height="258" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Border CornerRadius="2" Background="#FF262626" Width="600" Height="258" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Border CornerRadius="2" Background="{DynamicResource Background.Secondary}" Width="600" Height="258" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <Border CornerRadius="2" Background="{DynamicResource Background.Secondary}" Width="600" Height="258" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Grid SnapsToDevicePixels="True">
-                <TextBlock x:Name="DialogTitle" Text="" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" FontFamily="/XylarBedrock.Core;component/Resources/fonts/#Noto Sans" FontSize="24" Margin="0,20,0,0" FontWeight="Bold"/>
-                <TextBlock x:Name="DialogText" Text="" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Foreground="White" FontFamily="/XylarBedrock.Core;component/Resources/fonts/#Noto Sans" FontSize="14" Margin="28.5,70,28.5,0" TextWrapping="Wrap"/>
-                <Border Background="#FF313131" Height="1" Margin="0,185,0,72" />
+                <TextBlock x:Name="DialogTitle" Text="" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="{DynamicResource PrimaryText.Foreground}" FontFamily="/XylarBedrock.Core;component/Resources/fonts/#Noto Sans" FontSize="24" Margin="0,20,0,0" FontWeight="Bold" />
+                <TextBlock x:Name="DialogText" Text="" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Top" Foreground="{DynamicResource PrimaryText.Foreground}" FontFamily="/XylarBedrock.Core;component/Resources/fonts/#Noto Sans" FontSize="14" Margin="28.5,70,28.5,0" TextWrapping="Wrap" />
+                <Border Background="{DynamicResource Seperator.Background}" Height="1" Margin="0,185,0,72" />
                 <CheckBox Margin="20,185,0,0" HorizontalAlignment="Left" VerticalContentAlignment="Bottom" VerticalAlignment="Center" x:Name="DialogOptionalCheckbox" Checked="DialogOptionalCheckbox_Checked" Unchecked="DialogOptionalCheckbox_Checked">
-                    <TextBlock x:Name="DialogOptional" Foreground="White" FontFamily="/XylarBedrock.Core;component/Resources/fonts/#Noto Sans" FontSize="12" Text="Optional Text"></TextBlock>
+                    <TextBlock x:Name="DialogOptional" Foreground="{DynamicResource PrimaryText.Foreground}" FontFamily="/XylarBedrock.Core;component/Resources/fonts/#Noto Sans" FontSize="12" Text="Optional Text"></TextBlock>
                 </CheckBox>
                 <StackPanel Margin="0,185,20,0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled">
-                    <Button x:Name="YesButton" Click="YesButton_Click" SnapsToDevicePixels="True" Foreground="White" Content="{DynamicResource GeneralText_Yes}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Style="{DynamicResource DialogButton_Green}"/>
-                    <Button x:Name="NoButton" Click="NoButton_Click" SnapsToDevicePixels="True" Foreground="White" Content="{DynamicResource GeneralText_No}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="32" Style="{DynamicResource DialogButton_Red}"/>
-                    <Button x:Name="CancelButton" Click="CancelButton_Click" SnapsToDevicePixels="True" Foreground="White" Content="{DynamicResource GeneralText_Cancel}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="32" Style="{DynamicResource DialogButton}"/>
+                    <Button x:Name="YesButton" Click="YesButton_Click" SnapsToDevicePixels="True" Foreground="{DynamicResource PrimaryText.Foreground}" Content="{DynamicResource GeneralText_Yes}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Style="{DynamicResource DialogButton_Green}" />
+                    <Button x:Name="NoButton" Click="NoButton_Click" SnapsToDevicePixels="True" Foreground="{DynamicResource PrimaryText.Foreground}" Content="{DynamicResource GeneralText_No}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="32" Style="{DynamicResource DialogButton_Red}" />
+                    <Button x:Name="CancelButton" Click="CancelButton_Click" SnapsToDevicePixels="True" Foreground="{DynamicResource PrimaryText.Foreground}" Content="{DynamicResource GeneralText_Cancel}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" Height="32" Style="{DynamicResource DialogButton}" />
                 </StackPanel>
             </Grid>
         </Border>

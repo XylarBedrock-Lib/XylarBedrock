@@ -29,7 +29,7 @@
     
     <BorderGapMaskConverter x:Key="BorderGapMaskConverter"/>
     <Style TargetType="{x:Type GroupBox}">
-        <Setter Property="BorderBrush" Value="#D5DFE5"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Seperator.Background}" />
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Template">
             <Setter.Value>
